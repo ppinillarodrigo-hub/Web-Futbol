@@ -269,3 +269,19 @@ html[data-theme="light"] #dashboard .pulse-card{color:#1a3551!important}
 .logo-holder:has(img[data-league-logo="rsa.1"]){background:#11243c!important}
 html[data-theme="light"] .logo-holder:has(img[data-league-logo="rsa.1"]){background:#f4f8fd!important}
 .logo-holder img[data-league-logo="rsa.1"]{image-rendering:auto!important;object-fit:contain!important;filter:none!important}
+
+
+/* 2026-11-17: Local high-resolution emblems, no sprite crops or upscaling */
+.logo-holder:has(img[data-league-logo="ned.1"]),
+.logo-holder:has(img[data-league-logo="aus.1"]),
+.logo-holder:has(img[data-league-logo="fifa.worldq.uefa"]),
+.logo-holder:has(img[data-league-logo="fifa.worldq.caf"]),
+.logo-holder:has(img[data-league-logo="caf.nations_qual"]),
+.logo-holder:has(img[data-league-logo="fifa.worldq.conmebol"]),
+.logo-holder:has(img[data-league-logo="uefa.nations"]){
+  background:#f5f8fd!important;border:0!important;box-shadow:none!important;
+}
+.logo-holder img:is([data-league-logo="ned.1"],[data-league-logo="aus.1"],[data-league-logo="fifa.worldq.uefa"],[data-league-logo="fifa.worldq.caf"],[data-league-logo="caf.nations_qual"],[data-league-logo="fifa.worldq.conmebol"],[data-league-logo="uefa.nations"]){
+  image-rendering:auto!important;object-fit:contain!important;filter:none!important;
+  padding:2px!important;width:100%!important;height:100%!important;
+}

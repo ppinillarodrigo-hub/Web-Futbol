@@ -6,6 +6,13 @@
     'rsa.1':'./assets/betway-premiership.svg',
 
     'eng.1':'./assets/premier-league-lion-2026.png',
+    /* User-supplied modern emblems, individually optimized. */
+    'ned.1':'./assets/eredivisie-2026.svg',
+    'aus.1':'./assets/a-league-men-2026.svg',
+    'fifa.worldq.uefa':'./assets/european-qualifiers-2026.webp',
+    'fifa.worldq.caf':'./assets/caf-federation-hq.webp',
+    'caf.nations_qual':'./assets/caf-federation-hq.webp',
+    'fifa.worldq.conmebol':'./assets/conmebol-federation-hq.webp',
     'bra.2':'https://commons.wikimedia.org/wiki/Special:FilePath/Campeonato_Brasileiro_Série_B_logo_(2025).svg',
     'concacaf.champions':'https://commons.wikimedia.org/wiki/Special:FilePath/CONCACAF_Champions_Cup_logo.svg',
     'uefa.euro.2024':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Euro_2024_logo.svg',
@@ -51,7 +58,7 @@
     'fra.w.1':'./assets/premiere-ligue.webp',
     'eng.w.1':'./assets/wsl.webp',
     'esp.w.1':'./assets/liga-f.webp',
-    'uefa.nations':'https://commons.wikimedia.org/wiki/Special:FilePath/Uefa_nations_league_textlogo.png',
+    'uefa.nations':'./assets/uefa-nations-league-hq.webp',
     'concacaf.gold':'https://commons.wikimedia.org/wiki/Special:FilePath/Concacaf_Gold_Cup_2021.svg',
     'concacaf.nations.league':'https://commons.wikimedia.org/wiki/Special:FilePath/CONCACAF_Nations_League_(2026).svg',
     'caf.nations':'https://commons.wikimedia.org/wiki/Special:FilePath/2025_Africa_Cup_of_Nations_logo.svg'
