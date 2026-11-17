@@ -1,0 +1,137 @@
+/* FOOTY NOVA / Borderless interface and reliable Chromebook sidebar.
+   Last stylesheet: overrides older decorative rules without changing data logic. */
+:root{
+ --nova-surface:#0c1a2d;
+ --nova-elevated:#13263e;
+ --nova-deep:#081525;
+ --nova-soft:#1b3651;
+}
+html,body{background:#081525!important;overflow-x:clip}
+.app-shell{
+ width:100%!important;max-width:none!important;min-height:100dvh!important;
+ margin:0!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;overflow:visible!important;
+ display:grid!important;grid-template-columns:88px minmax(0,1fr)!important;
+ background:linear-gradient(125deg,#0a1627,#0d1d31 80%)!important;
+}
+.workspace{min-width:0;max-width:100%;overflow:clip}
+/* Desktop rail: independent scroll box, stable viewport height and no overlap. */
+.sidebar{
+ position:sticky!important;top:0!important;left:auto!important;bottom:auto!important;
+ width:88px!important;min-width:88px!important;height:100dvh!important;max-height:100dvh!important;
+ transform:none!important;z-index:40!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ gap:16px!important;padding:16px 8px!important;
+ overflow:hidden!important;border:0!important;border-radius:0!important;
+ background:linear-gradient(180deg,#152b44,#101d31)!important;box-shadow:none!important;
+}
+.sidebar .brand{display:grid!important;place-items:center!important;flex:0 0 60px;width:60px!important;height:60px!important;margin:0 auto!important;border:0!important;box-shadow:0 8px 18px #0003!important}
+.sidebar-scroll{width:100%!important;min-height:0!important;flex:1 1 auto!important;overflow-y:auto!important;overflow-x:hidden!important;padding:2px 0 8px!important;scrollbar-width:none!important}
+.sidebar-scroll::-webkit-scrollbar{display:none}
+.sidebar .main-nav{display:flex!important;flex-direction:column!important;align-items:center!important;gap:10px!important;width:100%!important}
+.sidebar .nav-link{
+ box-sizing:border-box!important;width:48px!important;min-width:48px!important;height:48px!important;min-height:48px!important;
+ flex:0 0 48px!important;padding:0!important;margin:0 auto!important;
+ border:0!important;border-radius:16px!important;display:flex!important;
+ align-items:center!important;justify-content:center!important;gap:0!important;
+ overflow:hidden!important;background:transparent!important;
+ color:#a9c4dd!important;box-shadow:none!important;font-size:0!important;
+ white-space:nowrap!important;
+}
+.sidebar .nav-link .nav-icon{width:48px!important;height:48px!important;flex:0 0 48px!important;font-family:Arial,system-ui,sans-serif!important;font-size:25px!important;line-height:1!important;display:grid!important;place-items:center!important;color:inherit!important}
+.sidebar .nav-link:hover{background:#213c59!important;color:#eaf7ff!important}
+.sidebar .nav-link.active{background:linear-gradient(145deg,var(--league-a,#438cec),#2772c2)!important;color:#fff!important;box-shadow:0 7px 16px #061d3880!important}
+.sidebar .sidebar-bottom,.sidebar .sidebar-info,.sidebar .source-label,.sidebar .menu-heading,.sidebar .featured-leagues,.sidebar .brand-copy,.sidebar .nav-tail{display:none!important}
+/* No grey external frame. Cards are separated by blue-black tone, not stroke. */
+.topbar{border:0!important;box-shadow:none!important}
+.pulse-nav,.search-trigger,.icon-button,.outline-btn,#choose-league,
+.rail-item,.competition-rail,.panel,.pulse-card,.pulse-feature,.pulse-match-tile,
+.pulse-side-col,.match-card,.feature-match,.metric-panel,.points-chart,
+.explore-card,.explore-hero,.league-tile,.dialog,.dialog-head,.toast,
+.status-banner,.info-note,.segmented,.date-chip button,.date-chip input,
+.filter-input,.sidebar-info,.pulse-standing,.pulse-matchup,.pulse-secondary,
+.pulse-primary,.pulse-match-grid,.favorite-row,.scorer-row,.country-tabs button,
+.table-wrap,.scorebox,.logo-holder{border:0!important;outline:0 solid transparent!important}
+:where(button,a,input,select,[role="button"]):focus-visible{
+ outline:2px solid var(--league-b,#67b3ff)!important;
+ outline-offset:3px!important;
+}
+.panel,.pulse-card,.pulse-feature{box-shadow:0 10px 28px #0003!important;background:linear-gradient(148deg,#142944,#0f2036)!important}
+.match-card,.pulse-match-tile{background:linear-gradient(110deg,#1a3049,#112238)!important;box-shadow:none!important}
+.match-card:hover,.pulse-match-tile:hover,.explore-card:hover{background:#233c59!important;box-shadow:0 5px 19px #0003!important}
+.rail-item,.explore-card,.league-tile{background:linear-gradient(145deg,#1b324e,#132740)!important;box-shadow:0 5px 14px #0002!important}
+.rail-item.selected,.explore-card.selected,.league-tile.selected{background:linear-gradient(140deg,#284f73,#193550)!important;box-shadow:inset 0 -3px 0 var(--league-a,#5194ff)!important}
+.competition-rail,.pulse-nav,.segmented{background:#11243a!important;box-shadow:none!important}
+.rail-logo,.logo-holder{box-shadow:none!important}
+/* Readability: avoid squeezing team names and row labels on smaller Chromebooks. */
+.page-heading h2{font-weight:800!important;letter-spacing:-.028em!important}
+.main{min-width:0!important}
+.panel-header{border-bottom:0!important}
+.standings th,.standings td{border:0!important}
+.standings tbody tr:nth-child(even){background:#ffffff04!important}
+.standings tbody tr:hover{background:#ffffff0a!important}
+.logo-holder:has(img[data-league-logo="fra.1"]),
+.logo-holder:has(img[data-league-logo="por.1"]),
+.logo-holder:has(img[data-league-logo="aut.1"]){background:#f7fafc!important}
+.logo-holder:has(img[data-league-logo="fra.1"]) img,
+.logo-holder:has(img[data-league-logo="por.1"]) img,
+.logo-holder:has(img[data-league-logo="aut.1"]) img{padding:4px!important}
+/* Tablet width: keep the desktop rail, but top navigation may scroll. */
+@media(max-width:1100px) and (min-width:781px){
+ .app-shell{grid-template-columns:74px minmax(0,1fr)!important}
+ .sidebar{width:74px!important;min-width:74px!important;padding:16px 5px!important}
+ .sidebar .nav-link{height:46px!important;min-height:46px!important}
+ .topbar{grid-template-columns:minmax(0,1fr) auto!important}
+ .pulse-nav{grid-column:1 / -1!important;grid-row:2!important;max-width:100%!important}
+}
+/* Mobile: proper drawer instead of 88px rail, readable labels and protected scrolling. */
+@media(max-width:780px){
+ html,body{overflow-x:hidden!important}
+ .app-shell{display:block!important;width:100%!important;min-height:100dvh!important;margin:0!important;border-radius:0!important}
+ .workspace{width:100%;min-width:0;overflow:visible}
+ .sidebar{
+   position:fixed!important;top:0!important;left:0!important;bottom:0!important;
+   height:100dvh!important;max-height:100dvh!important;width:min(300px,88vw)!important;
+   min-width:0!important;transform:translateX(-105%)!important;
+   z-index:120!important;padding:22px 17px!important;
+   border:0!important;border-radius:0 24px 24px 0!important;
+   box-shadow:15px 0 35px #0007!important;align-items:stretch!important;
+   overflow:hidden!important;transition:transform .22s ease!important;
+ }
+ .sidebar.open{transform:translateX(0)!important}
+ .sidebar .brand{display:flex!important;justify-content:flex-start!important;width:100%!important;height:65px!important;flex:0 0 65px!important;margin:0 0 12px!important;padding:6px!important;border-radius:18px!important}
+ .sidebar .brand-copy{display:flex!important;flex-direction:column;min-width:0}
+ .sidebar-scroll{width:100%!important;overflow-y:auto!important;overflow-x:hidden!important;padding:5px 0 15px!important}
+ .sidebar .main-nav{align-items:stretch!important;gap:6px!important}
+ .sidebar .nav-link{
+  display:flex!important;justify-content:flex-start!important;align-items:center!important;
+  width:100%!important;min-width:0!important;height:49px!important;min-height:49px!important;
+  flex:0 0 49px!important;padding:0 13px!important;margin:0!important;
+  border-radius:14px!important;gap:11px!important;overflow:visible!important;
+  font-size:14px!important;line-height:1.2!important;font-weight:650!important;
+ }
+ .sidebar .nav-link .nav-icon{width:33px!important;flex:0 0 33px!important;height:42px!important;font-size:23px!important}
+ .sidebar .menu-heading{display:block!important;margin:10px 8px!important;font-size:11px!important}
+ .sidebar .featured-leagues,.sidebar .menu-heading.spaced{display:none!important}
+ .sidebar .nav-tail{display:none!important}
+ .topbar{min-height:64px!important;gap:7px!important;padding:10px 13px!important}
+ .pulse-nav{max-width:100%!important;min-width:0!important;overflow-x:auto!important;justify-content:flex-start!important}
+ .main{padding:12px 13px 26px!important}
+ .mobile-shade:not([hidden]){position:fixed!important;z-index:110!important;inset:0!important;background:#031022a6!important}
+}
+:root[data-theme="light"] html,:root[data-theme="light"] body{background:#e6edf6!important}
+:root[data-theme="light"] .app-shell{background:#eff4fa!important}
+:root[data-theme="light"] .workspace{background:#eef4fa!important}
+:root[data-theme="light"] .panel,:root[data-theme="light"] .pulse-card{background:#fff!important;box-shadow:0 9px 23px #37547812!important}
+:root[data-theme="light"] .match-card,:root[data-theme="light"] .pulse-match-tile{background:#e7eff8!important}
+:root[data-theme="light"] .rail-item,:root[data-theme="light"] .explore-card{background:#e5edf7!important}
+/* Remove inherited framed navigation and ID-specific strokes. */
+.sidebar .main-nav,.sidebar .sidebar-scroll,.sidebar .nav-link,
+#competition-rail,#choose-league,#open-search,#theme-toggle,
+#menu-open,#open-search,.topbar .icon-button,
+.rail-track,.pulse-feature-top,.pulse-date-nav,
+.pulse-card .panel-header,.pulse-match-tile,.sidebar .brand{
+ border:0!important;outline:0 solid transparent!important;
+}
+.sidebar .main-nav{background:none!important;box-shadow:none!important;padding:0!important;border-radius:0!important}
+:where(#choose-league,#open-search,#theme-toggle,#menu-open,.sidebar .nav-link):focus-visible{outline:2px solid #7fcaff!important;outline-offset:3px!important}

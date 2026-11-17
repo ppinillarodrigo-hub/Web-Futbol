@@ -4,6 +4,9 @@
   const original=window.footyLogoFor;
   const logos=Object.freeze({
     'ita.2':'./assets/serie-b-bkt.webp',
+    'fra.1':'./assets/ligue1-new.webp',
+    'por.1':'./assets/liga-portugal-new.webp',
+    'aut.1':'./assets/bundesliga-austria-new.webp',
     'ger.w.1':'./assets/frauen-bundesliga.webp',
     'ita.w.1':'./assets/serie-a-women.webp',
     'fra.w.1':'./assets/premiere-ligue.webp',

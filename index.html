@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="./styles.css">
 <link rel="stylesheet" href="./pulse.css">
 <link rel="stylesheet" href="./visual-fixes.css">
+<link rel="stylesheet" href="./clean-interface.css">
 <script defer src="./leagues.js"></script>
 <script defer src="./logos.js"></script>
 <script defer src="./logo-upgrades.js"></script>
@@ -31,13 +32,13 @@
     <div class="sidebar-scroll">
       <div class="menu-heading">EXPLORA</div>
       <nav class="main-nav" aria-label="Navegación principal">
-        <button class="nav-link active" data-view="home"><span class="nav-icon">◈</span>Inicio <span class="nav-tail">›</span></button>
-        <button class="nav-link" data-view="matches"><span class="nav-icon">◷</span>Partidos <span class="nav-tail">›</span></button>
-        <button class="nav-link" data-view="standings"><span class="nav-icon">▥</span>Clasificación <span class="nav-tail">›</span></button>
-        <button class="nav-link" data-view="scorers"><span class="nav-icon">◎</span>Goleadores <span class="nav-tail">›</span></button>
-        <button class="nav-link" data-view="videos"><span class="nav-icon">▷</span>Resúmenes <span class="nav-tail">›</span></button>
-        <button class="nav-link" data-view="explore"><span class="nav-icon">◉</span>Competiciones <span class="nav-tail">›</span></button>
-        <button class="nav-link" data-view="favorites"><span class="nav-icon">☆</span>Favoritos <span class="nav-tail" id="fav-count">0</span></button>
+        <button class="nav-link active" data-view="home" title="Inicio"><span class="nav-icon">◈</span>Inicio <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="matches" title="Partidos"><span class="nav-icon">◷</span>Partidos <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="standings" title="Clasificación"><span class="nav-icon">▥</span>Clasificación <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="scorers" title="Goleadores"><span class="nav-icon">◎</span>Goleadores <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="videos" title="Resúmenes"><span class="nav-icon">▷</span>Resúmenes <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="explore" title="Competiciones"><span class="nav-icon">◉</span>Competiciones <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="favorites" title="Favoritos"><span class="nav-icon">☆</span>Favoritos <span class="nav-tail" id="fav-count">0</span></button>
       </nav>
       <div class="menu-heading spaced">COMPETICIONES <button id="explore-more" class="subtle-link">Ver todas</button></div>
       <div class="featured-leagues" id="featured-leagues"></div>
