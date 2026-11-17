@@ -15,7 +15,11 @@
     'ita.w.1':'./assets/serie-a-women.webp',
     'fra.w.1':'./assets/premiere-ligue.webp',
     'eng.w.1':'./assets/wsl.webp',
-    'esp.w.1':'./assets/liga-f.webp'
+    'esp.w.1':'./assets/liga-f.webp',
+    'uefa.nations':'https://commons.wikimedia.org/wiki/Special:FilePath/Uefa_nations_league_textlogo.png',
+    'concacaf.gold':'https://commons.wikimedia.org/wiki/Special:FilePath/Concacaf_Gold_Cup_2021.svg',
+    'concacaf.nations.league':'https://commons.wikimedia.org/wiki/Special:FilePath/CONCACAF_Nations_League_(2026).svg',
+    'caf.nations':'https://commons.wikimedia.org/wiki/Special:FilePath/2025_Africa_Cup_of_Nations_logo.svg'
   });
   window.footyLogoFor=id=>logos[id] || (typeof original==='function'?original(id):'');
 })();
