@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://site.api.espn.com">
 <link rel="stylesheet" href="./styles.css">
 <script defer src="./leagues.js"></script>
+<script defer src="./logos.js"></script>
 <script defer src="./app.js"></script>
 </head>
 <body>
@@ -31,6 +32,7 @@
         <button class="nav-link" data-view="standings"><span class="nav-icon">▥</span>Clasificación <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="scorers"><span class="nav-icon">◎</span>Goleadores <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="videos"><span class="nav-icon">▷</span>Resúmenes <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="explore"><span class="nav-icon">◉</span>Competiciones <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="favorites"><span class="nav-icon">☆</span>Favoritos <span class="nav-tail" id="fav-count">0</span></button>
       </nav>
       <div class="menu-heading spaced">COMPETICIONES <button id="explore-more" class="subtle-link">Ver todas</button></div>
@@ -60,8 +62,8 @@
       <section class="hero" id="hero-section">
         <div class="hero-gridlines"></div><div class="hero-arc hero-arc-one"></div><div class="hero-arc hero-arc-two"></div>
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-diamond">✦</span> EL FÚTBOL EN OTRA DIMENSIÓN <span class="eyebrow-line"></span></div>
-          <h1>La nueva era<br>del <em>fútbol.</em></h1>
+          <div class="eyebrow"><span class="eyebrow-diamond">✦</span> TU PASIÓN. TODAS LAS COMPETICIONES. <span class="eyebrow-line"></span></div>
+          <h1>El fútbol se vive<br><em>a otro nivel.</em></h1>
           <p>Partidos, resultados, clasificación, goleadores y momentos inolvidables. Todo tu fútbol. Un solo universo.</p>
           <div class="hero-actions"><button class="primary-btn" data-view="matches">Explorar partidos <span>↗</span></button><button class="secondary-btn" data-view="videos">Ver resúmenes <span>▷</span></button></div>
           <div class="hero-stats"><span><b id="hero-league-count">64</b><small>Competiciones</small></span><i></i><span><b>24/7</b><small>Acceso global</small></span><i></i><span><b>LIVE</b><small>Actualizaciones</small></span></div>
@@ -69,6 +71,7 @@
         <div class="hero-art" aria-hidden="true"><div class="hero-halo"></div><div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div><img class="hero-emblem" src="./brand-icon.webp" alt="" width="390" height="390"><span class="orbit-tag t1">⚡ MATCH CENTER</span><span class="orbit-tag t2">◉ WORLD FOOTBALL</span></div>
         <div class="hero-bottomline"></div>
       </section>
+      <div class="competition-rail" id="competition-rail" aria-label="Logos y accesos a las ligas"></div>
       <div class="context-row">
         <div class="page-heading"><span class="section-kicker" id="section-kicker">MATCH CENTER / 01</span><h2 id="page-title">El centro del juego<span class="dot-accent">.</span></h2><p id="page-description">Toda la actualidad de tu competición en tiempo real.</p></div>
         <div class="context-actions"><button class="outline-btn" id="choose-league"><span id="league-flag">🇪🇸</span><span id="league-name">LaLiga EA SPORTS</span><span class="down-caret">⌄</span></button><button class="icon-button outline" id="refresh-all" aria-label="Actualizar datos" title="Actualizar datos">↻</button></div>
