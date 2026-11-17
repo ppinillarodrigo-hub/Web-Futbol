@@ -63,6 +63,7 @@ function draw(){
 }
 function render(savedFavorites=[]){
  favorites=Array.isArray(savedFavorites)?savedFavorites:[];
+ queueMicrotask(draw);
  return '<div class="market-page">'+
  '<section class="market-intro"><div><span class="market-kicker">TRANSFER WINDOW · FOOTY NOVA</span><h2>El mercado <em>no se detiene.</em></h2><p>Fichajes, rumores y noticias de las principales ligas. Los artículos se abren en la fuente original: una noticia no equivale a un fichaje oficial.</p></div><div class="market-intro-art" aria-hidden="true">↗<span>TRANSFER RADAR</span></div></section>'+
  '<div class="market-toolbar"><div class="market-filters" role="group" aria-label="Filtrar noticias">'+

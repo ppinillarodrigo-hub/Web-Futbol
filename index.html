@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#061128">
-<meta name="description" content="FOOTY NOVA: tu universo del fútbol. Resultados, clasificaciones, goleadores y resúmenes en un mismo lugar.">
+<meta name="description" content="FOOTY NOVA: resultados, ligas, goleadores, resúmenes, noticias y últimos fichajes de fútbol con fuentes identificadas.">
 <title>FOOTY NOVA · Tu universo del fútbol</title>
 <link rel="icon" href="./favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="./icon-192.png">
@@ -16,12 +16,14 @@
 <link rel="stylesheet" href="./visual-fixes.css">
 <link rel="stylesheet" href="./clean-interface.css">
 <link rel="stylesheet" href="./light-contrast.css">
+<link rel="stylesheet" href="./market.css">
 <script defer src="./leagues.js"></script>
 <script defer src="./logos.js"></script>
 <script defer src="./logo-upgrades.js"></script>
 <script defer src="./logos-extra.js"></script>
 <script defer src="./fresh-logos.js"></script>
 <script defer src="./scorers-engine.js"></script>
+<script defer src="./market.js"></script>
 <script defer src="./app.js"></script>
 </head>
 <body>
@@ -40,6 +42,7 @@
         <button class="nav-link" data-view="standings" title="Clasificación"><span class="nav-icon">▥</span>Clasificación <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="scorers" title="Goleadores"><span class="nav-icon">◎</span>Goleadores <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="videos" title="Resúmenes"><span class="nav-icon">▷</span>Resúmenes <span class="nav-tail">›</span></button>
+        <button class="nav-link" data-view="market" title="Mercado de fichajes"><span class="nav-icon">↗</span>Fichajes <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="explore" title="Competiciones"><span class="nav-icon">◉</span>Competiciones <span class="nav-tail">›</span></button>
         <button class="nav-link" data-view="favorites" title="Favoritos"><span class="nav-icon">☆</span>Favoritos <span class="nav-tail" id="fav-count">0</span></button>
       </nav>
@@ -59,7 +62,7 @@
         <button class="icon-button mobile-menu" id="menu-open" aria-label="Abrir menú">☰</button>
         <div class="breadcrumbs"><span>FOOTY</span><b>/</b><span id="crumb-title">Inicio</span></div>
       </div>
-      <nav class="pulse-nav" aria-label="Navegación deportiva"><button data-view="home" class="active">Inicio</button><button data-view="matches">Partidos</button><button data-view="standings">Clasificación</button><button data-view="scorers">Goleadores</button><button data-view="videos">Resúmenes</button><button data-view="explore">Ligas</button></nav><div class="topbar-actions">
+      <nav class="pulse-nav" aria-label="Navegación deportiva"><button data-view="home" class="active">Inicio</button><button data-view="matches">Partidos</button><button data-view="standings">Clasificación</button><button data-view="scorers">Goleadores</button><button data-view="videos">Resúmenes</button><button data-view="market">Fichajes</button><button data-view="explore">Ligas</button></nav><div class="topbar-actions">
         <button class="search-trigger" id="open-search"><span class="search-symbol">⌕</span><span class="search-placeholder">Buscar ligas y equipos...</span><kbd>Ctrl K</kbd></button>
         <div class="live-pill"><span class="live-dot"></span><span>FOOTY LIVE</span></div>
         <button id="theme-toggle" class="icon-button" title="Cambiar tema" aria-label="Cambiar tema">☾</button>
@@ -72,8 +75,8 @@
         <div class="hero-copy">
           <div class="eyebrow"><span class="eyebrow-diamond">✦</span> TU PASIÓN. TODAS LAS COMPETICIONES. <span class="eyebrow-line"></span></div>
           <h1>El fútbol se vive<br><em>a otro nivel.</em></h1>
-          <p>Partidos, resultados, clasificación, goleadores y momentos inolvidables. Todo tu fútbol. Un solo universo.</p>
-          <div class="hero-actions"><button class="primary-btn" data-view="matches">Explorar partidos <span>↗</span></button><button class="secondary-btn" data-view="videos">Ver resúmenes <span>▷</span></button></div>
+          <p>Partidos, resultados, goleadores, resúmenes y mercado de fichajes. Todo tu fútbol en un solo universo.</p>
+          <div class="hero-actions"><button class="primary-btn" data-view="matches">Explorar partidos <span>↗</span></button><button class="secondary-btn" data-view="videos">Ver resúmenes <span>▷</span></button><button class="secondary-btn" data-view="market">Últimos fichajes <span>↗</span></button></div>
           <div class="hero-stats"><span><b id="hero-league-count">64</b><small>Competiciones</small></span><i></i><span><b>24/7</b><small>Acceso global</small></span><i></i><span><b>LIVE</b><small>Actualizaciones</small></span></div>
         </div>
         <div class="hero-art" aria-hidden="true"><div class="hero-halo"></div><div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div><img class="hero-emblem" src="./brand-icon.webp" alt="" width="390" height="390"><span class="orbit-tag t1">⚡ MATCH CENTER</span><span class="orbit-tag t2">◉ WORLD FOOTBALL</span></div>

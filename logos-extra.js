@@ -3,6 +3,14 @@
 (function(){
   const original=window.footyLogoFor;
   const logos=Object.freeze({
+
+    'bra.2':'https://commons.wikimedia.org/wiki/Special:FilePath/Campeonato_Brasileiro_Série_B_logo_(2025).svg',
+    'concacaf.champions':'https://commons.wikimedia.org/wiki/Special:FilePath/CONCACAF_Champions_Cup_logo.svg',
+    'uefa.euro.2024':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Euro_2024_logo.svg',
+    'conmebol.america':'https://commons.wikimedia.org/wiki/Special:FilePath/Copa_America_wordmark.svg',
+    'ksa.1':'https://commons.wikimedia.org/wiki/Special:FilePath/Saudi_Pro_League_Logo.svg',
+    'ind.1':'https://commons.wikimedia.org/wiki/Special:FilePath/AlFF_MG_Indian_Super_League_2026-27.svg',
+    'fifa.wwc':'https://commons.wikimedia.org/wiki/Special:FilePath/FIFA_Women%27s_World_Cup_wordmark.svg',
     'conmebol.libertadores':'./assets/conmebol-libertadores-fixed.webp',
     'conmebol.sudamericana':'./assets/conmebol-sudamericana-fixed.webp',
     'conmebol.recopa':'./assets/conmebol-recopa-fixed.webp',
