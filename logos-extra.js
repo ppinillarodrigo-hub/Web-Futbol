@@ -3,6 +3,10 @@
 (function(){
   const original=window.footyLogoFor;
   const logos=Object.freeze({
+    'conmebol.libertadores':'./assets/conmebol-libertadores-fixed.webp',
+    'conmebol.sudamericana':'./assets/conmebol-sudamericana-fixed.webp',
+    'conmebol.recopa':'./assets/conmebol-recopa-fixed.webp',
+
     'bra.1':'./assets/sa-brasileirao.webp',
     'arg.1':'./assets/sa-argentina.webp',
     'par.1':'./assets/sa-paraguay.webp',

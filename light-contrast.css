@@ -247,3 +247,20 @@ html[data-theme="light"] #dashboard .pulse-card{color:#1a3551!important}
 .logo-holder .fresh-logo-sprite {image-rendering:auto!important;filter:none!important}
 /* No artificial white borders or frames. */
 .logo-holder {border:0!important;box-shadow:none!important}
+
+
+/* CONMEBOL: independent local images, no sliced sprites or external redirects. */
+.logo-holder.conmebol-local {
+  background:#071d3d!important;
+  border:0!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+}
+.logo-holder.conmebol-local img[data-league-logo]{
+  inset:0!important;width:100%!important;height:100%!important;
+  padding:0!important;object-fit:contain!important;
+  display:block!important;image-rendering:auto!important;filter:none!important;
+}
+.logo-holder.conmebol-local.logo-loaded .logo-fallback {visibility:hidden!important}
+.logo-holder.conmebol-local .cup-logo-sprite,
+.logo-holder.conmebol-local .competition-sprite {display:none!important}
