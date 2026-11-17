@@ -73,3 +73,9 @@ body{background:radial-gradient(ellipse at 50% -10%,#074a7528,transparent 45%),v
 /* Emblemas de selecciones recortados de las imágenes aportadas y guardados localmente */
 .logo-holder .national-logo-sprite{position:absolute;inset:0;z-index:1;border-radius:inherit;background-image:url('./assets/national-selections.webp');background-repeat:no-repeat;background-size:700% 100%;display:block}
 .logo-holder.logo-loaded .logo-fallback{visibility:hidden}
+
+/* Escudos de copas proporcionados por el usuario; fondo independiente y sprites de 6 celdas */
+.logo-holder.cup-dark{background:#092544;border-color:#225277}
+.logo-holder .cup-logo-sprite{position:absolute;inset:0;display:block;z-index:1;background-image:url('./assets/continental-domestic-cups.png');background-repeat:no-repeat;background-size:600% 100%;border-radius:inherit}
+.logo-holder.cup-dark .logo-fallback{color:#bfefff}
+.logo-holder.logo-loaded .logo-fallback{visibility:hidden}

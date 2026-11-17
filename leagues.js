@@ -43,6 +43,8 @@ const FOOTY_RAW=[
 ['ecu.1','LigaPro','Ecuador','🇪🇨','América','https://ligapro.ec/'],
 ['conmebol.libertadores','Copa Libertadores','CONMEBOL','🏆','Internacionales','https://www.conmebol.com/libertadores/'],
 ['conmebol.sudamericana','Copa Sudamericana','CONMEBOL','🏆','Internacionales','https://www.conmebol.com/sudamericana/'],
+['conmebol.recopa','CONMEBOL Recopa','CONMEBOL','🏆','Internacionales','https://www.conmebol.com/recopa/'],
+['conmebol.libertadores.femenina','Libertadores Femenina','CONMEBOL','🏆','Fútbol femenino','https://gol.conmebol.com/libertadores/es'],
 ['concacaf.champions','Champions Cup CONCACAF','CONCACAF','🏆','Internacionales','https://www.concacaf.com/champions-cup/'],
 ['fifa.world','Mundial FIFA','FIFA','🌎','Selecciones','https://www.fifa.com/en/tournaments/mens/worldcup'],
 ['fifa.worldq.uefa','Clasificación Mundial UEFA','FIFA','🌎','Selecciones','https://www.fifa.com/'],

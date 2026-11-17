@@ -38,6 +38,9 @@ const nationalMarks={
  'fifa.worldq.conmebol':6
 };
 window.footyNationalSpriteFor=id=>Object.prototype.hasOwnProperty.call(nationalMarks,id)?(nationalMarks[id]*100/6):null;
+
+const cupMarks={'conmebol.libertadores':0,'conmebol.sudamericana':1,'conmebol.recopa':2,'conmebol.libertadores.femenina':3,'esp.copa_del_rey':4,'eng.fa':5};
+window.footyCupSpriteFor=id=>Object.prototype.hasOwnProperty.call(cupMarks,id)?cupMarks[id]*20:null;
 window.footyLogoFor=id=>{const item=marks[id];return item?(document.documentElement.dataset.theme==='light'?item.light:item.dark):''};
 window.footyUpdateLogos=()=>document.querySelectorAll('img[data-league-logo]').forEach(im=>{const url=window.footyLogoFor(im.dataset.leagueLogo);if(url&&im.getAttribute('src')!==url){im.parentElement.classList.remove('logo-loaded');im.src=url;}else if(!url){im.hidden=true;im.parentElement.classList.remove('logo-loaded')}});
 window.footyHydrateLogos=async()=>{try{let r=await fetch('https://api-football-standings.azharimm.site/leagues');if(!r.ok)return;let o=await r.json();for(const x of o.data||[]){if(!marks[x.id]&&x.logos?.light&&/^https:\/\//.test(x.logos.light))marks[x.id]={light:x.logos.light,dark:x.logos.dark||x.logos.light};}window.footyUpdateLogos();}catch(e){}};
