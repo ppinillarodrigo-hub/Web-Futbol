@@ -72,6 +72,8 @@ const FOOTY_RAW=[
 ['caf.nations','Copa Africana de Naciones','CAF','🏆','Selecciones','https://www.cafonline.com/'],
 ['esp.w.1','Liga F','España','🇪🇸','Fútbol femenino','https://ligaf.es/'],
 ['eng.w.1','Women’s Super League','Inglaterra','🏴','Fútbol femenino','https://womensleagues.thefa.com/'],
+['ger.w.1','Google Pixel Frauen-Bundesliga','Alemania','🇩🇪','Fútbol femenino','https://www.dfb.de/en/women/womens-bundesliga',true],
+['ita.w.1','Serie A Women Athora','Italia','🇮🇹','Fútbol femenino','https://www.figc.it/serie-a-women',true],
 ['fra.w.1','Première Ligue','Francia','🇫🇷','Fútbol femenino','https://www.fff.fr/'],
 ['usa.nwsl','NWSL','Estados Unidos','🇺🇸','Fútbol femenino','https://www.nwslsoccer.com/'],
 ['uefa.wchampions','Women’s Champions League','UEFA','🏆','Fútbol femenino','https://www.uefa.com/womenschampionsleague/'],

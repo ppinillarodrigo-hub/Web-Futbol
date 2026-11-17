@@ -1,0 +1,88 @@
+/* FOOTY NOVA · Chromebook legibility & layout repair · 2026-11-17
+   Loaded after styles.css and pulse.css so the updated components are authoritative.
+   Uses system fonts to avoid artefacts from condensed webfonts on ChromeOS. */
+:root{--nova-accent:var(--league-a,#579bfa);--nova-ink:#edf6ff;--nova-muted:#a6c0db;--nova-ring:color-mix(in srgb,var(--league-a,#579bfa) 37%,#233d61)}
+html{font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+body,button,input,select,textarea{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Arial,sans-serif!important}
+/* The old heavyweight condensed font rendered as overlapping jagged glyphs on some Chromebooks. */
+.page-heading h2,.panel-header h3,.metric-value,.scorebox strong,.pulse-big-score,
+.pulse-feature h3,.brand-copy b,.explore-section-head h3,.explore-hero h3,
+.hero h1,.pulse-card h3,.dialog-head h2,.scorer-row .goals{
+  font-family:Inter,ui-sans-serif,system-ui,'Segoe UI',Arial,sans-serif!important;
+  font-stretch:normal!important;font-variant-ligatures:none;letter-spacing:-.025em!important;
+  text-shadow:none!important;text-transform:none!important;
+}
+.page-heading h2{font-size:clamp(23px,2.25vw,32px)!important;font-weight:780!important;line-height:1.23!important;letter-spacing:-.035em!important;margin:6px 0 7px!important}
+.panel-header h3{font-size:19px!important;font-weight:760!important;line-height:1.3!important;margin:3px 0 0!important}
+.section-kicker,.mini-kicker,.group-title{font-family:ui-sans-serif,system-ui,'Segoe UI',sans-serif!important;letter-spacing:.095em!important}
+.page-heading p{font-size:12px!important;line-height:1.6!important;color:var(--nova-muted)!important}
+/* Fix oversized gutters / tiny controls and give the interface consistent glass panels. */
+.app-shell{border-radius:29px!important;box-shadow:0 22px 74px #02091670!important}
+.main{padding-bottom:34px!important}
+.topbar{min-height:72px!important;padding-top:9px!important;padding-bottom:9px!important}
+.context-row{align-items:center!important;margin:4px 0 17px!important}
+.page-heading{min-width:0!important}
+.context-actions{max-width:100%;flex-wrap:wrap;justify-content:flex-end}
+#choose-league{height:44px;max-width:min(300px,100%)!important;min-width:0;font-size:12px!important;gap:9px;padding:5px 12px!important}
+#league-name{font-weight:750!important}
+#dashboard{min-width:0}
+.toolbar{margin:0 0 15px!important;gap:12px!important}
+.toolbar-right{justify-content:flex-end!important}
+.segmented{border:1px solid #3c5778!important;border-radius:12px!important;background:#0c1b30!important;flex-wrap:wrap}
+.segmented button{min-height:34px!important;padding:9px 12px!important;color:#bed4ec!important;font-size:12px!important;border-radius:9px!important}
+.segmented button.selected{background:linear-gradient(120deg,var(--nova-accent),#579bf1)!important;color:#07182d!important;box-shadow:0 3px 12px #0005!important}
+.date-chip{gap:7px!important;flex-wrap:wrap;min-width:0}
+.date-chip input{height:40px!important;max-width:150px;font-size:12px!important;color:#edf7ff!important}
+.date-chip button{height:40px!important;min-width:39px!important;border-radius:10px!important}
+.date-chip .today-btn{font-size:12px!important}
+.panel{background:linear-gradient(155deg,#142640,#101f37)!important;border:1px solid #294564!important;box-shadow:0 12px 30px #07112344!important}
+.panel-header{padding:15px 20px!important;min-height:70px!important;gap:10px!important}
+.panel-header .mini-kicker{color:var(--league-b,#98caff)!important}
+.panel-body{padding:17px 20px!important}
+.panel-link{font-family:ui-sans-serif,system-ui,sans-serif!important;font-size:11px!important;color:var(--league-b,#8cdcff)!important}
+/* Align team logos, increase visual hierarchy and remove awkward empty row space. */
+.match-groups{width:100%;display:grid;gap:16px;min-width:0}
+.group-title{margin:2px 0 10px!important;font-size:10px!important;color:#b9d2ed!important;font-weight:750!important}
+.match-list{gap:9px!important}
+.match-card{grid-template-columns:minmax(0,1fr) minmax(78px,110px) minmax(0,1fr) 15px!important;gap:16px!important;min-height:82px!important;padding:13px 19px!important;border-radius:14px!important;background:linear-gradient(130deg,#132743,#101f36)!important;border-color:#284563!important}
+.match-card:hover,.match-card:focus-visible{border-color:var(--nova-accent)!important;background:linear-gradient(130deg,#1b3552,#152846)!important;outline-offset:2px}
+.match-card .team{gap:11px!important;font-size:13px!important;font-weight:650!important;min-width:0}
+.match-card .team-name{white-space:normal!important;line-height:1.3;overflow-wrap:anywhere}
+.match-card .club-crest,.match-card .club-placeholder{width:37px!important;height:37px!important;max-width:37px;flex-shrink:0}
+.scorebox strong{font-size:24px!important;font-weight:800!important;line-height:1.1!important;letter-spacing:0!important;color:#f3f8ff}
+.scorebox small{font-size:10px!important;font-weight:600!important;line-height:1.25;margin-top:6px!important;color:#b1c8e1!important}
+.match-arrow{font-size:22px!important;color:#7da3c8!important}
+/* Tables: keep headers legible and only scroll the table area, not the entire page. */
+.table-wrap{overflow-x:auto;max-width:100%;scrollbar-width:thin}
+.standings{min-width:650px;table-layout:auto}
+.standings th{font-size:10px!important;letter-spacing:.04em!important;color:#b7ccdf!important}
+.standings td{font-size:12px!important;line-height:1.4!important;padding:12px 11px!important}
+.scorer-row{font-size:13px!important;line-height:1.45!important}
+.scorer-row .goals{font-weight:800!important}
+/* Logos: do not stretch pixelated badges; transparent assets stand out against neutral navy tiles. */
+.logo-holder{background:#f3f8fc!important;border:1px solid #ffffff38!important;overflow:hidden;contain:paint}
+.logo-holder img{width:100%!important;height:100%!important;object-fit:contain!important;padding:6px!important;image-rendering:auto!important}
+.logo-holder.explore-logo{width:82px!important;height:82px!important}
+.logo-holder.explore-logo img{padding:10px!important}
+.logo-holder.tile-logo{width:60px!important;height:60px!important}
+.logo-holder.rail-logo{width:57px!important;height:57px!important}
+.explore-card{min-height:204px!important;gap:7px!important;justify-content:flex-start}
+.explore-card strong{font-size:12px!important;line-height:1.32!important;overflow-wrap:anywhere}
+.explore-card small{line-height:1.35}
+/* The five women's league marks have transparent raster backgrounds, not a white card. */
+.logo-holder:has(img[data-league-logo="esp.w.1"]),.logo-holder:has(img[data-league-logo="eng.w.1"]),
+.logo-holder:has(img[data-league-logo="ger.w.1"]),.logo-holder:has(img[data-league-logo="ita.w.1"]),
+.logo-holder:has(img[data-league-logo="fra.w.1"]),.logo-holder:has(img[data-league-logo="ita.2"]){background:#0b2846!important;border-color:#3d5a77!important}
+/* Ensure the picture, flag fallback and icon layers cannot overlap in broken states. */
+.logo-holder img[hidden]{display:none!important}
+.logo-holder.logo-loaded img{visibility:visible!important}
+.logo-holder:not(.logo-loaded) .logo-fallback{visibility:visible!important}
+.logo-holder.logo-loaded .logo-fallback{visibility:hidden!important}
+/* Respect light mode selection and smaller ChromeOS screens. */
+:root[data-theme="light"] .panel{background:linear-gradient(135deg,#fff,#ecf5ff)!important;border-color:#d4e3f3!important}
+:root[data-theme="light"] .match-card{background:linear-gradient(130deg,#f8fcff,#ebf3fc)!important;border-color:#c7daec!important;color:#122c48!important}
+:root[data-theme="light"] .match-card .scorebox strong{color:#123251!important}
+@media(max-width:1100px){.topbar{grid-template-columns:auto minmax(0,1fr) auto!important}.pulse-nav{max-width:min(100%,690px)!important}.main{padding-left:18px!important;padding-right:18px!important}.context-row{align-items:flex-start!important}.page-heading h2{font-size:25px!important}.match-card{grid-template-columns:minmax(0,1fr) 95px minmax(0,1fr) 12px!important;padding:12px!important;gap:8px!important}.match-card .team{font-size:12px!important}}
+@media(max-width:720px){.app-shell{width:100%!important;margin:0!important;border:0!important;border-radius:0!important;min-height:100dvh!important}.main{padding:14px 13px 32px!important}.topbar{gap:7px!important;min-height:68px!important}.context-row{gap:9px!important}.panel-header{padding:13px 14px!important}.panel-body{padding:13px 12px!important}.page-heading h2{font-size:24px!important}.toolbar{align-items:stretch!important}.toolbar-left,.toolbar-right{max-width:100%;width:100%;justify-content:flex-start!important}.segmented{width:100%;justify-content:space-between!important;overflow:auto;flex-wrap:nowrap;scrollbar-width:none}.segmented button{padding:9px 8px!important;white-space:nowrap;font-size:10px!important}.match-card{grid-template-columns:minmax(0,1fr) 70px minmax(0,1fr)!important;padding:12px 9px!important;gap:6px!important;min-height:77px!important}.match-card .team{font-size:10px!important;gap:4px!important}.match-card .team.home{flex-direction:row-reverse;text-align:left;justify-content:flex-start!important}.match-card .team.away{justify-content:flex-start!important}.match-card .club-crest,.match-card .club-placeholder{width:28px!important;height:28px!important}.scorebox strong{font-size:19px!important}.scorebox small{font-size:9px!important}.match-arrow{display:none!important}.standings{min-width:560px}}
+@media(max-width:410px){.page-heading h2{font-size:22px!important}.context-actions{width:100%!important;justify-content:stretch!important}#choose-league{max-width:100%!important;width:100%!important}.match-card{grid-template-columns:minmax(0,1fr) 60px minmax(0,1fr)!important}.match-card .team-name{font-size:10px!important}}
+@media(prefers-reduced-motion:reduce){.match-card:hover{transform:none!important}}
