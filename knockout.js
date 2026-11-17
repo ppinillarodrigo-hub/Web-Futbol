@@ -10,7 +10,7 @@ const CUPS=new Set([
  'conmebol.america','conmebol.america.2024','concacaf.champions','concacaf.gold',
  'afc.champions','afc.asian.cup','caf.champions','caf.nations','fifa.world','fifa.wwc',
  'esp.copa_del_rey','eng.fa','ger.dfb_pokal','ita.coppa_italia','uefa.nations',
- 'esp.2'
+ 'concacaf.nations.league'
 ]);
 const ESC=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 const labels={playoff:'Playoffs',r32:'Dieciseisavos',r16:'Octavos',qf:'Cuartos',sf:'Semifinales',final:'Final'};
@@ -19,7 +19,7 @@ const MONTHS=(y,m)=>String(y)+String(m).padStart(2,'0');
 const canShow=id=>CUPS.has(id)||/copa|cup|pokal|champions|recopa|libertadores|sudamericana|nations|europa|euro/.test(id);
 function months(id,year){
  let start,end;
- if(id==='fifa.world'||id==='fifa.wwc'){start=[year,5];end=[year,8]}
+ if(id==='fifa.world'||id==='fifa.wwc'||id==='uefa.euro'||id==='conmebol.america.2024'){start=[year,5];end=[year,8]}
  else if(id.startsWith('conmebol.')||id.startsWith('concacaf.')){start=[year,2];end=[year,12]}
  else if(id==='afc.asian.cup'||id==='caf.nations'){start=[year,1];end=[year,12]}
  else{start=[year,9];end=[year+1,6]}
@@ -30,6 +30,8 @@ function seasonYear(id,selectedYear){
  if(Number.isInteger(selectedYear))return selectedYear;
  const d=new Date(),y=d.getFullYear(),m=d.getMonth()+1;
  if(id==='fifa.world')return 2026;
+ if(id==='fifa.wwc')return 2027;
+ if(id==='afc.asian.cup')return 2027;
  if(id==='conmebol.america.2024')return 2024;
  if(id==='uefa.euro')return 2028;
  if(id.startsWith('conmebol.')||id.startsWith('concacaf.')||id==='afc.asian.cup'||id==='caf.nations')return y;
