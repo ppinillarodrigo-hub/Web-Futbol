@@ -7,6 +7,7 @@
     'fifa.world':'./assets/fifa-world-cup-trophy.webp',
     'conmebol.america.2024':'./assets/copa-america-2024.webp',
     'uefa.euro.2028':'./assets/euro-2028.webp',
+    'uefa.euro':'./assets/euro-2028.webp',
     'fra.1':'./assets/ligue1-new.webp',
     'por.1':'./assets/liga-portugal-new.webp',
     'aut.1':'./assets/bundesliga-austria-new.webp',
