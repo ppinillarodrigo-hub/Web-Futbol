@@ -45,7 +45,7 @@ function leagueBadge(l,cls='competition-logo'){
     :'';
  /* The user's updated logos in the fresh montage take precedence over older files.
     Otherwise use a full image/SVG and retain the original badge as a graceful fallback. */
- const useImage=!!src && fresh==null;
+ const useImage=!!src && (fresh==null || src.startsWith('./assets/crisp/'));
  const graphic=useImage
    ?sprite+`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('logo-loaded');this.parentElement.querySelector('.competition-sprite')?.remove()" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`
    :sprite|| (src?`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('logo-loaded')" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`:'');
