@@ -103,9 +103,58 @@ function sidebar(){const ids=['esp.1','eng.1','uefa.champions','ita.1','ger.1','
 const dataVersions={standings:null,matches:null,scorers:null};
 async function loadStandings(force=false){const id=state.league,g=state.generation;busy(true);try{const d=await getJSON(urls.standings(id),force,180000);if(g!==state.generation)return;state.standings=parseStandings(d);dataVersions.standings=id;state.errors.standings='';}catch(e){if(g!==state.generation)return;state.standings=null;dataVersions.standings=id;state.errors.standings=e.message;}finally{busy(false);if(g===state.generation){status(errorSummary());render()}}}
 async function loadMatches(force=false){const id=state.league,g=state.generation,day=state.date,end=shift(day,6);busy(true);try{const result=await getMatches(id,day,end,force);if(g!==state.generation||day!==state.date)return;state.matches=result;dataVersions.matches=id+'@'+day;state.errors.matches='';}catch(e){if(g!==state.generation||day!==state.date)return;state.matches=[];dataVersions.matches=id+'@'+day;state.errors.matches=e.message;}finally{busy(false);if(g===state.generation){status(errorSummary());render()}}}
-function findScoringCategories(o){const arr=[];const seen=new WeakSet();function scan(obj,depth=0){if(!obj||typeof obj!=='object'||depth>6||seen.has(obj))return;seen.add(obj);if(Array.isArray(obj)){for(const x of obj.slice(0,60))scan(x,depth+1);return}const tag=norm([obj.name,obj.displayName,obj.abbreviation,obj.type].filter(Boolean).join(' '));if(Array.isArray(obj.leaders)&&/(goal|scor|anotac|goles)/i.test(tag)&&!/(assist|conced|against|own|penalt|goalkeep)/i.test(tag))arr.push(...obj.leaders);for(const k of ['categories','leaders','items','statistics','splits'])if(obj[k])scan(obj[k],depth+1)}scan(o);return arr}
-function parseLeaderItem(x){const a=x.athlete||x.player||x.athlete?.athlete||{};const value=number(x.value??x.displayValue??x.stats?.goals??x.goals);return{id:String(a.id||x.id||''),name:a.displayName||a.fullName||a.name||x.displayName||x.name||'',headshot:validURL(a.headshot?.href||a.headshot||a.photo?.href||''),team:a.team?.displayName||x.team?.displayName||x.team?.name||'',goals:value,ref:a.$ref||x.athlete?.$ref||'',teamref:x.team?.$ref||''}}
-async function loadScorers(force=false){const id=state.league,g=state.generation;busy(true);let error='';try{let records=[];for(const url of [urls.leaders(id),urls.leaderSite(id)]){try{const d=await getJSON(url,force,360000);const items=findScoringCategories(d);if(items.length){records=items.map(parseLeaderItem).filter(p=>p.goals!==null);break}const direct=(d.athletes||d.items||d.results||[]);if(Array.isArray(direct)){const list=direct.map(x=>parseLeaderItem(x.athlete||x));if(list.some(p=>p.goals!==null)){records=list.filter(p=>p.goals!==null);break}}}catch(e){error=e.message}}if(records.length){const refs=records.filter(p=>p.ref&&(!p.name||!p.id)).slice(0,20);for(let i=0;i<refs.length;i+=5){await Promise.allSettled(refs.slice(i,i+5).map(async p=>{try{const a=await getJSON(p.ref,force,360000);p.name=a.displayName||a.fullName||p.name;p.id=String(a.id||p.id);p.headshot=validURL(a.headshot?.href||p.headshot);p.team=a.team?.displayName||p.team}catch{}}))}}records=records.filter(x=>x.name&&x.goals!==null).sort((a,b)=>b.goals-a.goals).filter((p,i,a)=>a.findIndex(x=>(x.id&&x.id===p.id)||(x.name===p.name))===i).slice(0,40);if(g!==state.generation)return;state.scorers=records;state.scorersInfo=records.length?'':(error?'La API de goleadores no ha respondido: '+error:'No hay goleadores publicados por la fuente para esta liga.');dataVersions.scorers=id;state.errors.scorers=''}catch(e){if(g!==state.generation)return;state.scorers=[];state.scorersInfo=e.message;state.errors.scorers=e.message;dataVersions.scorers=id}finally{busy(false);if(g===state.generation)render()}}
+
+function scorerGoalValue(x){
+if(!x||typeof x!=='object')return null;
+for(const k of ['goals','goalsScored','totalGoals'])if(number(x[k])!==null)return number(x[k]);
+const hits=[];
+function scan(o,n=0){if(!o||typeof o!=='object'||n>5)return;if(Array.isArray(o)){o.slice(0,100).forEach(a=>scan(a,n+1));return}
+const key=String(o.name||o.type||o.abbreviation||'').replace(/[^a-z]/gi,'').toLowerCase();
+if(['goal','goals','totalgoals','goalsscored','goles','scoringgoals'].includes(key)&&o.value!=null)hits.push(o.value);
+for(const a of ['statistics','stats','categories','splits'])if(o[a])scan(o[a],n+1)}
+scan(x);for(const v of hits){const a=number(v);if(a!==null)return a}return null;
+}
+function scorerList(root){
+const result=[],seen=new WeakSet();
+function visit(o,category='',d=0){if(!o||typeof o!=='object'||d>8||seen.has(o))return;seen.add(o);
+if(Array.isArray(o)){o.slice(0,150).forEach(x=>visit(x,category,d+1));return}
+const tag=norm([o.name,o.displayName,o.type,o.category].filter(Boolean).join(' '));
+const isGoal=/(^|[^a-z])(goals?|goles|scoring)([^a-z]|$)/i.test(tag)&&!/(own|against|conced|assist|goalkeeper|save|permatch)/i.test(tag);
+const hasPlayer=o.athlete||o.player||o.athleteId;
+if(hasPlayer){
+ const a=o.athlete?.athlete||o.athlete||o.player||{},p=a&&typeof a==='object'?a:{};
+ const value=scorerGoalValue(o)??((category==='goals'||isGoal)?number(o.value??o.displayValue):null);
+ if(value!==null&&value>=0){
+ result.push({id:String(p.id||o.athleteId||o.id||''),name:p.displayName||p.fullName||p.name||o.displayName||o.name||'',team:p.team?.displayName||o.team?.displayName||o.team?.name||'',headshot:validURL(p.headshot?.href||p.headshot||o.headshot?.href||''),goals:value,ref:p.$ref||o.athlete?.$ref||''});
+ }}
+ if(Array.isArray(o.leaders)&&isGoal)visit(o.leaders,'goals',d+1);
+ for(const k of ['categories','athletes','items','results','statistics','entries','players','groups']){
+  if(o[k])visit(o[k],isGoal?'goals':category,d+1);
+ }}
+ visit(root);return result;
+}
+async function loadScorers(force=false){
+const id=state.league,g=state.generation;busy(true);
+let records=[],reason='';
+try{
+ const endpoints=[
+  `https://site.web.api.espn.com/apis/common/v3/sports/soccer/${encodeURIComponent(id)}/statistics/byathlete?limit=40&page=1`,
+  urls.leaders(id),
+  `https://site.api.espn.com/apis/site/v2/sports/soccer/${encodeURIComponent(id)}/leaders`
+ ];
+ for(const url of endpoints){try{const result=await getJSON(url,force,300000);const players=scorerList(result);if(players.length){records=players;break}}catch(e){reason=e.message}}
+ const missing=records.filter(x=>x.ref&&!x.name&&/^https:\/\/sports\.core\.api\.espn\.com\//.test(x.ref)).slice(0,16);
+ for(let k=0;k<missing.length;k+=4){await Promise.allSettled(missing.slice(k,k+4).map(async p=>{try{const a=await getJSON(p.ref,force,300000);p.name=a.displayName||a.fullName||a.name||p.name;p.id=String(a.id||p.id);p.headshot=validURL(a.headshot?.href||p.headshot);p.team=a.team?.displayName||p.team}catch(e){}}))}
+ const unique=new Map();for(const p of records){if(!p.name||p.goals===null||!Number.isFinite(p.goals))continue;const key=p.id?'id:'+p.id:'name:'+norm(p.name)+':'+norm(p.team);if(!unique.has(key)||unique.get(key).goals<p.goals)unique.set(key,p)}
+ records=[...unique.values()].sort((a,b)=>b.goals-a.goals||a.name.localeCompare(b.name,'es')).slice(0,40);
+ if(g!==state.generation)return;
+ state.scorers=records;
+ state.scorersInfo=records.length?'':'La fuente ESPN no ha publicado una tabla verificable para '+nl().name+(reason?'. Algunos endpoints no responden.':'.');
+ dataVersions.scorers=id;state.errors.scorers='';
+}catch(e){if(g!==state.generation)return;state.scorers=[];state.scorersInfo='No se ha podido obtener una tabla fiable: '+e.message;state.errors.scorers=e.message;dataVersions.scorers=id}
+finally{busy(false);if(g===state.generation)render()}
+}
+
 function errorSummary(){const parts=[];if(state.errors.standings&&['home','standings'].includes(state.view))parts.push('clasificación');if(state.errors.matches&&['home','matches'].includes(state.view))parts.push('partidos');return parts.length?'Algunas fuentes no responden ('+parts.join(' y ')+'). Puedes cambiar de liga o reintentar.':''}
 function ensureData(force=false){if(['favorites','videos','explore'].includes(state.view))return;if(lookup(state.league).catalogOnly){status('Este torneo está en el catálogo visual, pero ESPN no proporciona datos verificables. Consulta el sitio oficial de la AFC.');return;}if(state.league==='conmebol.libertadores.femenina'){state.standings={groups:[]};state.matches=[];state.scorers=[];state.scorersInfo='Este torneo está en el catálogo con su logo y enlace oficial. ESPN no tiene un identificador de resultados verificado aquí.';dataVersions.standings=state.league;dataVersions.matches=state.league+'@'+state.date;dataVersions.scorers=state.league;status('Libertadores Femenina: consulta los resultados en la web oficial de CONMEBOL.');render();return;}if(['home','standings'].includes(state.view)&&(force||dataVersions.standings!==state.league))loadStandings(force);if(['home','matches'].includes(state.view)&&(force||dataVersions.matches!==state.league+'@'+state.date))loadMatches(force);if(['home','scorers'].includes(state.view)&&(force||dataVersions.scorers!==state.league))loadScorers(force)}
 function setView(view){if(!['home','matches','standings','scorers','videos','explore','favorites'].includes(view))return;state.view=view;state.search='';closeModal();closeMobile();status('');history.replaceState({},'','#'+view);render();if(view==='videos'){loadVideos()}else ensureData()}
