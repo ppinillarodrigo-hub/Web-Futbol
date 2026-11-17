@@ -1,0 +1,1325 @@
+{
+  "edition": "2026",
+  "source": "FIFA - Copa Mundial 2026 - Calendario y resultados oficiales",
+  "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/knockout-stage-match-schedule-bracket",
+  "recordedAt": "2026-11-17",
+  "disclaimer": "Copia estática de resultados históricos contrastados, no un servicio oficial de datos de FIFA.",
+  "events": [
+    {
+      "id": "fifa26-verified-73",
+      "date": "2026-06-28T15:00:00Z",
+      "name": "Sudáfrica - Canadá",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "South Africa",
+                "displayName": "Sudáfrica"
+              },
+              "score": "0",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Canada",
+                "displayName": "Canadá"
+              },
+              "score": "1",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-74",
+      "date": "2026-06-29T15:00:00Z",
+      "name": "Brasil - Japón",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Brazil",
+                "displayName": "Brasil"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Japan",
+                "displayName": "Japón"
+              },
+              "score": "1",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-75",
+      "date": "2026-06-29T15:00:00Z",
+      "name": "Alemania - Paraguay",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Germany",
+                "displayName": "Alemania"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Paraguay",
+                "displayName": "Paraguay"
+              },
+              "score": "1",
+              "winner": true
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Penales 3–4"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Penales 3–4"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-76",
+      "date": "2026-06-29T15:00:00Z",
+      "name": "Países Bajos - Marruecos",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Netherlands",
+                "displayName": "Países Bajos"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Morocco",
+                "displayName": "Marruecos"
+              },
+              "score": "1",
+              "winner": true
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Penales 2–3"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Penales 2–3"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-77",
+      "date": "2026-06-30T15:00:00Z",
+      "name": "Costa de Marfil - Noruega",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Ivory Coast",
+                "displayName": "Costa de Marfil"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Norway",
+                "displayName": "Noruega"
+              },
+              "score": "2",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-78",
+      "date": "2026-06-30T15:00:00Z",
+      "name": "Francia - Suecia",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "France",
+                "displayName": "Francia"
+              },
+              "score": "3",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Sweden",
+                "displayName": "Suecia"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-79",
+      "date": "2026-07-01T15:00:00Z",
+      "name": "México - Ecuador",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Mexico",
+                "displayName": "México"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Ecuador",
+                "displayName": "Ecuador"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-80",
+      "date": "2026-07-01T15:00:00Z",
+      "name": "Inglaterra - R. D. del Congo",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "England",
+                "displayName": "Inglaterra"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "DR Congo",
+                "displayName": "R. D. del Congo"
+              },
+              "score": "1",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-81",
+      "date": "2026-07-01T15:00:00Z",
+      "name": "Bélgica - Senegal",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Belgium",
+                "displayName": "Bélgica"
+              },
+              "score": "3",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Senegal",
+                "displayName": "Senegal"
+              },
+              "score": "2",
+              "winner": false
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Prórroga"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Prórroga"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-82",
+      "date": "2026-07-01T15:00:00Z",
+      "name": "Estados Unidos - Bosnia y Herzegovina",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "United States",
+                "displayName": "Estados Unidos"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Bosnia and Herzegovina",
+                "displayName": "Bosnia y Herzegovina"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-83",
+      "date": "2026-07-02T15:00:00Z",
+      "name": "España - Austria",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Spain",
+                "displayName": "España"
+              },
+              "score": "3",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Austria",
+                "displayName": "Austria"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-84",
+      "date": "2026-07-02T15:00:00Z",
+      "name": "Portugal - Croacia",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Portugal",
+                "displayName": "Portugal"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Croatia",
+                "displayName": "Croacia"
+              },
+              "score": "1",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-85",
+      "date": "2026-07-02T15:00:00Z",
+      "name": "Suiza - Argelia",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Switzerland",
+                "displayName": "Suiza"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Algeria",
+                "displayName": "Argelia"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-86",
+      "date": "2026-07-03T15:00:00Z",
+      "name": "Australia - Egipto",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Australia",
+                "displayName": "Australia"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Egypt",
+                "displayName": "Egipto"
+              },
+              "score": "1",
+              "winner": true
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Penales 2–4"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Penales 2–4"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-87",
+      "date": "2026-07-03T15:00:00Z",
+      "name": "Argentina - Cabo Verde",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Argentina",
+                "displayName": "Argentina"
+              },
+              "score": "3",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Cape Verde",
+                "displayName": "Cabo Verde"
+              },
+              "score": "2",
+              "winner": false
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Prórroga"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Prórroga"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-88",
+      "date": "2026-07-03T15:00:00Z",
+      "name": "Colombia - Ghana",
+      "week": {
+        "text": "Round of 32"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Colombia",
+                "displayName": "Colombia"
+              },
+              "score": "1",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Ghana",
+                "displayName": "Ghana"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-89",
+      "date": "2026-07-04T15:00:00Z",
+      "name": "Canadá - Marruecos",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Canada",
+                "displayName": "Canadá"
+              },
+              "score": "0",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Morocco",
+                "displayName": "Marruecos"
+              },
+              "score": "3",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-90",
+      "date": "2026-07-04T15:00:00Z",
+      "name": "Paraguay - Francia",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Paraguay",
+                "displayName": "Paraguay"
+              },
+              "score": "0",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "France",
+                "displayName": "Francia"
+              },
+              "score": "1",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-91",
+      "date": "2026-07-05T15:00:00Z",
+      "name": "Brasil - Noruega",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Brazil",
+                "displayName": "Brasil"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Norway",
+                "displayName": "Noruega"
+              },
+              "score": "2",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-92",
+      "date": "2026-07-05T15:00:00Z",
+      "name": "México - Inglaterra",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Mexico",
+                "displayName": "México"
+              },
+              "score": "2",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "England",
+                "displayName": "Inglaterra"
+              },
+              "score": "3",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-93",
+      "date": "2026-07-06T15:00:00Z",
+      "name": "España - Portugal",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Spain",
+                "displayName": "España"
+              },
+              "score": "1",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Portugal",
+                "displayName": "Portugal"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-94",
+      "date": "2026-07-06T15:00:00Z",
+      "name": "Bélgica - Estados Unidos",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Belgium",
+                "displayName": "Bélgica"
+              },
+              "score": "4",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "United States",
+                "displayName": "Estados Unidos"
+              },
+              "score": "1",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-95",
+      "date": "2026-07-07T15:00:00Z",
+      "name": "Egipto - Argentina",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Egypt",
+                "displayName": "Egipto"
+              },
+              "score": "2",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Argentina",
+                "displayName": "Argentina"
+              },
+              "score": "3",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-96",
+      "date": "2026-07-07T15:00:00Z",
+      "name": "Suiza - Colombia",
+      "week": {
+        "text": "Round of 16"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Switzerland",
+                "displayName": "Suiza"
+              },
+              "score": "0",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Colombia",
+                "displayName": "Colombia"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Penales 4–3"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Penales 4–3"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-97",
+      "date": "2026-07-09T15:00:00Z",
+      "name": "Marruecos - Francia",
+      "week": {
+        "text": "Quarter-finals"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Morocco",
+                "displayName": "Marruecos"
+              },
+              "score": "0",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "France",
+                "displayName": "Francia"
+              },
+              "score": "2",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-98",
+      "date": "2026-07-10T15:00:00Z",
+      "name": "España - Bélgica",
+      "week": {
+        "text": "Quarter-finals"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Spain",
+                "displayName": "España"
+              },
+              "score": "2",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Belgium",
+                "displayName": "Bélgica"
+              },
+              "score": "1",
+              "winner": false
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-99",
+      "date": "2026-07-11T15:00:00Z",
+      "name": "Noruega - Inglaterra",
+      "week": {
+        "text": "Quarter-finals"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Norway",
+                "displayName": "Noruega"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "England",
+                "displayName": "Inglaterra"
+              },
+              "score": "2",
+              "winner": true
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Prórroga"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Prórroga"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-100",
+      "date": "2026-07-11T15:00:00Z",
+      "name": "Argentina - Suiza",
+      "week": {
+        "text": "Quarter-finals"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Argentina",
+                "displayName": "Argentina"
+              },
+              "score": "3",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Switzerland",
+                "displayName": "Suiza"
+              },
+              "score": "1",
+              "winner": false
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Prórroga"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Prórroga"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-101",
+      "date": "2026-07-14T15:00:00Z",
+      "name": "Francia - España",
+      "week": {
+        "text": "Semi-finals"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "France",
+                "displayName": "Francia"
+              },
+              "score": "0",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Spain",
+                "displayName": "España"
+              },
+              "score": "2",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-102",
+      "date": "2026-07-15T15:00:00Z",
+      "name": "Inglaterra - Argentina",
+      "week": {
+        "text": "Semi-finals"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "England",
+                "displayName": "Inglaterra"
+              },
+              "score": "1",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Argentina",
+                "displayName": "Argentina"
+              },
+              "score": "2",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-103",
+      "date": "2026-07-19T15:00:00Z",
+      "name": "España - Argentina",
+      "week": {
+        "text": "Final"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "Spain",
+                "displayName": "España"
+              },
+              "score": "1",
+              "winner": true
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "Argentina",
+                "displayName": "Argentina"
+              },
+              "score": "0",
+              "winner": false
+            }
+          ],
+          "notes": [
+            {
+              "headline": "Prórroga"
+            }
+          ]
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Prórroga"
+        }
+      }
+    },
+    {
+      "id": "fifa26-verified-104",
+      "date": "2026-07-18T15:00:00Z",
+      "name": "Francia - Inglaterra",
+      "week": {
+        "text": "Third-place match"
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "team": {
+                "id": "France",
+                "displayName": "Francia"
+              },
+              "score": "4",
+              "winner": false
+            },
+            {
+              "homeAway": "away",
+              "team": {
+                "id": "England",
+                "displayName": "Inglaterra"
+              },
+              "score": "6",
+              "winner": true
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "status": {
+        "type": {
+          "completed": true,
+          "state": "post",
+          "shortDetail": "Finalizado"
+        }
+      }
+    }
+  ]
+}
