@@ -84,7 +84,7 @@ function parseEvent(e,id=''){
  const name=x=>x?.team?.displayName||x?.team?.name||'Por confirmar';
  return {id:String(e.id),round:extractStage(e,id),date:Number.isFinite(date)?date:null,
   home:name(h),away:name(a),homeId:String(h.team?.id||name(h)),awayId:String(a.team?.id||name(a)),
-  hscore:score(h),ascore:score(a),played:!!(typ.completed||typ.state==='post'),status:typ.shortDetail||typ.detail||'',
+  hscore:score(h),ascore:score(a),hwinner:!!h.winner,awinner:!!a.winner,resultNote:typ.shortDetail||typ.detail||c.notes?.[0]?.headline||'',played:!!(typ.completed||typ.state==='post'),status:typ.shortDetail||typ.detail||'',
   venue:c.venue?.fullName||'',eventName:e.name||''};
 }
 function fixtures(events,id=''){
@@ -107,6 +107,17 @@ function fixtures(events,id=''){
 }
 async function load(id,getJSON,force=false,selectedYear=null){
  const y=seasonYear(id,selectedYear);
+ if(id==='fifa.world'&&y===2026){
+  try{
+   const resource=new URL('./worldcup-2026.json',location.href).href;
+   const verified=await getJSON(resource,force,86400000);
+   if(Array.isArray(verified.events)&&verified.events.length>=31){
+    const data=fixtures(verified.events,id);
+    const third=verified.events.filter(e=>String(e.week?.text||'').toLowerCase().includes('third-place')).map(e=>parseEvent(e,id));
+    return {...data,year:2026,third,source:verified.source,sourceUrl:verified.sourceUrl,staticEdition:true,events:verified.events.length};
+   }
+  }catch(e){/* If the static historical file is unavailable, consult ESPN. */}
+ }
  const periods=months(id,y);
  const fetched=[];let success=0;
  for(let i=0;i<periods.length;i+=4){
@@ -128,11 +139,11 @@ function fixtureCard(tie){
  const firstName=first.home,secondName=first.away;
  const h=score(first.homeId),a=score(first.awayId);
  const aggregate=tie.length>1&&h!==null&&a!==null;
- const status=aggregate?'Global · '+h+'–'+a:last.played?'Finalizado':last.date?new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short'}).format(new Date(last.date)):'Por confirmar';
+ const status=aggregate?'Global · '+h+'–'+a:last.played?(last.resultNote||'Finalizado'):last.date?new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short'}).format(new Date(last.date)):'Por confirmar';
  const team=(name,result,highlight)=>'<div class="ko-team"><span class="ko-team-name">'+ESC(name)+'</span><b'+(highlight?' class="ko-winner"':'')+'>'+(result===null?'–':result)+'</b></div>';
  const homeResult=aggregate?h:first.hscore,awayResult=aggregate?a:first.ascore;
  return '<div class="ko-tie" tabindex="0" role="group" aria-label="'+ESC(firstName+' contra '+secondName)+'">'+
-  team(firstName,homeResult,aggregate&&h>a)+team(secondName,awayResult,aggregate&&a>h)+
+  team(firstName,homeResult,(aggregate&&h>a)||(!aggregate&&first.hwinner))+team(secondName,awayResult,(aggregate&&a>h)||(!aggregate&&first.awinner))+
   '<div class="ko-tie-meta"><span>'+ESC(status)+'</span><span>'+(tie.length>1?tie.length+' partidos':'1 partido')+'</span></div></div>';
 }
 function render(id,data,official,loading,error){
@@ -152,11 +163,12 @@ function render(id,data,official,loading,error){
     (ties.length>18?'<div class="ko-pending">+ '+(ties.length-18)+' cruces adicionales en el sitio oficial</div>':'')+'</div></section>';
  }).join('');
  const found=data?.identified||0,unidentified=data?.unidentified?.length||0;
- const info='<p class="ko-note">'+(found?'Rondas reconocidas con partidos publicados. ':'Sin emparejamientos de fase final identificados todavía. ')+
+ const info='<p class="ko-note">'+(data?.staticEdition?'Mundial FIFA 2026 finalizado: 31 eliminatorias registradas, incluidos dieciseisavos, octavos, cuartos, semifinales y final. Resultados históricos contrastados con el calendario publicado por FIFA. ':found?'Rondas reconocidas con partidos publicados. ':'Sin emparejamientos de fase final identificados todavía. ')+
  (unidentified?'ESPN también tiene '+unidentified+' partidos sin ronda identificada que no se han asignado a un cruce. ':'')+
  'Las llaves entre rondas solo son definitivas tras el sorteo oficial.</p>';
  const unclassified=unidentified?'<details class="ko-other"><summary>Ver '+unidentified+' partidos sin ronda identificada</summary><div class="ko-other-grid">'+data.unidentified.slice(0,30).map(x=>'<div><strong>'+ESC(x.home)+' – '+ESC(x.away)+'</strong><span>'+ESC(x.date?new Intl.DateTimeFormat('es-ES',{day:'numeric',month:'short',year:'numeric'}).format(new Date(x.date)):'Por confirmar')+'</span></div>').join('')+'</div></details>':'';
- return head+'<div class="ko-view"><div class="ko-rounds" role="group" aria-label="Progreso de las eliminatorias hasta la final">'+columns+'</div></div>'+info+unclassified;
+ const bronze=data?.third?.length?'<div class="ko-other"><strong>Partido por el tercer puesto</strong><div class="ko-other-grid">'+data.third.map(m=>'<div><strong>'+ESC(m.home)+' '+m.hscore+'–'+m.ascore+' '+ESC(m.away)+'</strong><span>'+ESC(m.resultNote||'Finalizado')+'</span></div>').join('')+'</div></div>':'';
+ return head+'<div class="ko-view"><div class="ko-rounds" role="group" aria-label="Progreso de las eliminatorias hasta la final">'+columns+'</div></div>'+info+bronze+unclassified;
 }
 global.FOOTY_KNOCKOUT={canShow,load,render,fixtures,stage,seasonYear};
 })(window);
