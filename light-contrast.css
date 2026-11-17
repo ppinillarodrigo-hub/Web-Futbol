@@ -264,3 +264,8 @@ html[data-theme="light"] #dashboard .pulse-card{color:#1a3551!important}
 .logo-holder.conmebol-local.logo-loaded .logo-fallback {visibility:hidden!important}
 .logo-holder.conmebol-local .cup-logo-sprite,
 .logo-holder.conmebol-local .competition-sprite {display:none!important}
+
+/* Betway Premiership: dedicated light/dark high-contrast crest */
+.logo-holder:has(img[data-league-logo="rsa.1"]){background:#11243c!important}
+html[data-theme="light"] .logo-holder:has(img[data-league-logo="rsa.1"]){background:#f4f8fd!important}
+.logo-holder img[data-league-logo="rsa.1"]{image-rendering:auto!important;object-fit:contain!important;filter:none!important}

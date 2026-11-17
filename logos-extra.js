@@ -55,5 +55,5 @@
     'concacaf.nations.league':'https://commons.wikimedia.org/wiki/Special:FilePath/CONCACAF_Nations_League_(2026).svg',
     'caf.nations':'https://commons.wikimedia.org/wiki/Special:FilePath/2025_Africa_Cup_of_Nations_logo.svg'
   });
-  window.footyLogoFor=id=>logos[id] || (typeof original==='function'?original(id):'');
+  window.footyLogoFor=id=>id==='rsa.1'?(document.documentElement.dataset.theme==='light'?'./assets/betway-premiership-light.svg':'./assets/betway-premiership-dark.svg'):(logos[id] || (typeof original==='function'?original(id):''));
 })();
