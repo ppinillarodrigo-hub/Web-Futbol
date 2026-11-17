@@ -5,7 +5,6 @@ const external={
  'usa.1':'./assets/mls.webp',
  'ita.coppa_italia':'./assets/coppa-italia.webp',
  'ger.dfb_pokal':'./assets/dfb-pokal.webp',
- 'afc.u23':'./assets/afc-u23-asian-cup.webp',
  'fifa.worldq.afc':'./assets/afc-asian-qualifiers.webp',
  'esp.2':'./assets/laliga-hypermotion.png',
  'uefa.champions':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Champions_League_logo_no_text.svg',

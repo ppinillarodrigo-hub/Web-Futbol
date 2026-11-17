@@ -3,6 +3,17 @@
 (function(){
   const original=window.footyLogoFor;
   const logos=Object.freeze({
+    'bra.1':'./assets/sa-brasileirao.webp',
+    'arg.1':'./assets/sa-argentina.webp',
+    'par.1':'./assets/sa-paraguay.webp',
+    'ecu.1':'./assets/sa-ecuador.webp',
+    'col.1':'./assets/sa-colombia.webp',
+    'uru.1':'./assets/sa-uruguay.webp',
+    'bol.1':'./assets/sa-bolivia.webp',
+    'chi.1':'./assets/sa-chile.webp',
+    'per.1':'./assets/sa-peru.webp',
+    'ven.1':'./assets/sa-venezuela.webp',
+    'usa.nwsl':'./assets/sa-nwsl.webp',
     'ger.2':'./assets/crisp/ger-2.webp',
     'sco.1':'./assets/crisp/sco-1.webp',
     'bel.1':'./assets/crisp/bel-1.webp',
