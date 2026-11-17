@@ -23,6 +23,7 @@ const FOOTY_RAW=[
 ['aut.1','Bundesliga Austria','Austria','🇦🇹','Europa','https://www.bundesliga.at/'],
 ['tur.1','Süper Lig','Turquía','🇹🇷','Europa','https://www.tff.org/'],
 ['gre.1','Super League','Grecia','🇬🇷','Europa','https://www.slgr.gr/'],
+['ser.1','SuperLiga de Serbia','Serbia','🇷🇸','Europa','https://www.superliga.rs/en/',true],
 ['den.1','Superliga','Dinamarca','🇩🇰','Europa','https://superliga.dk/'],
 ['nor.1','Eliteserien','Noruega','🇳🇴','Europa','https://www.eliteserien.no/'],
 ['swe.1','Allsvenskan','Suecia','🇸🇪','Europa','https://www.svenskfotboll.se/'],
@@ -83,4 +84,5 @@ const FOOTY_RAW=[
 ['fifa.wwc','Mundial Femenino FIFA','FIFA','🌎','Fútbol femenino','https://www.fifa.com/en/tournaments/womens/womensworldcup']
 ];
 
-window.FOOTY_LEAGUES=FOOTY_RAW.map(([id,name,country,flag,region,official,catalogOnly=false])=>({id,name,country,flag,region,official,catalogOnly}));
+const FOOTY_EDITIONS={'uefa.euro.2024':'uefa.euro','uefa.euro.2028':'uefa.euro','conmebol.america.2024':'conmebol.america'};
+window.FOOTY_LEAGUES=FOOTY_RAW.map(([id,name,country,flag,region,official,catalogOnly=false])=>({id,name,country,flag,region,official,catalogOnly,editionOf:FOOTY_EDITIONS[id]||null}));
