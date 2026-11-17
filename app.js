@@ -36,17 +36,22 @@ function leagueBadge(l,cls='competition-logo'){
  const fresh=window.footyFreshLogoPosition?.(l.id);
  const national=window.footyNationalSpriteFor?.(l.id);
  const cup=window.footyCupSpriteFor?.(l.id);
- const hasLogo=fresh!=null||national!=null||cup!=null;
- const federation=['caf.nations','caf.nations_qual','fifa.worldq.caf'].includes(l.id);
- const label=federation?'Emblema de CAF: federación organizadora, no logo del torneo':l.id==='uefa.euro'?'Identidad de la edición EURO 2028':l.id==='afc.asian.cup'?'Emblema de AFC Asian Cup, no de una federación':l.name;
- const graphic=fresh!=null
-  ?`<span class="fresh-logo-sprite" aria-hidden="true" style="background-position:${fresh}% center"></span>`
+ const sprite = fresh!=null
+  ?`<span class="fresh-logo-sprite competition-sprite" aria-hidden="true" style="background-position:${fresh}% center"></span>`
   :cup!=null
-   ?`<span class="cup-logo-sprite" aria-hidden="true" style="background-position:${cup}% center"></span>`
+   ?`<span class="cup-logo-sprite competition-sprite" aria-hidden="true" style="background-position:${cup}% center"></span>`
    :national!=null
-    ?`<span class="national-logo-sprite" aria-hidden="true" style="background-position:${national}% center"></span>`
-    :src?`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" onload="this.parentElement.classList.add('logo-loaded')" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`:'';
- return `<span class="logo-holder ${safe(cls)} ${hasLogo?'logo-loaded':''} ${fresh!=null?'fresh-logo':''} ${cup!=null&&cup<=60?'cup-dark':''}" title="${safe(label)}"><span class="logo-fallback">${safe(l.flag||'⚽')}</span>${graphic}</span>`;
+    ?`<span class="national-logo-sprite competition-sprite" aria-hidden="true" style="background-position:${national}% center"></span>`
+    :'';
+ /* The user's updated logos in the fresh montage take precedence over older files.
+    Otherwise use a full image/SVG and retain the original badge as a graceful fallback. */
+ const useImage=!!src && fresh==null;
+ const graphic=useImage
+   ?sprite+`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('logo-loaded');this.parentElement.querySelector('.competition-sprite')?.remove()" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`
+   :sprite|| (src?`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('logo-loaded')" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`:'');
+ const initiallyLoaded=!!sprite&&!useImage;
+ const label=l.id==='uefa.euro'?'Identidad de la edición EURO 2028':l.id==='afc.asian.cup'?'Emblema de AFC Asian Cup':l.name;
+ return `<span class="logo-holder ${safe(cls)} ${initiallyLoaded?'logo-loaded':''} ${fresh!=null?'fresh-logo':''} ${cup!=null&&cup<=60?'cup-dark':''}" title="${safe(label)}"><span class="logo-fallback">${safe(l.flag||'⚽')}</span>${graphic}</span>`;
 }
 function rail(){const target=$('#competition-rail');if(!target)return;const picks=['esp.1','eng.1','ita.1','ger.1','fra.1','uefa.champions','uefa.europa','uefa.europa.conf','uefa.nations','concacaf.gold','caf.nations','conmebol.libertadores'];target.innerHTML=`<div class="rail-heading">✦ COMPETICIONES DESTACADAS <small>ACCESO RÁPIDO</small></div><div class="rail-track">${picks.map(id=>lookup(id)).map(l=>`<button class="rail-item ${l.id===state.league?'selected':''}" data-league="${safe(l.id)}">${leagueBadge(l,'rail-logo')}<span>${safe(l.name)}</span></button>`).join('')}<button class="rail-item" data-view="explore"><span class="logo-holder rail-logo"><span class="logo-fallback">✦</span></span><span>Todas</span></button></div>`;window.footyUpdateLogos?.();}
 function renderExplore(){const regions=['Selecciones','Europa','Internacionales','Copas','Fútbol femenino','América','Asia y Oceanía','África'];return `<div class="explore-hero"><span class="mini-kicker">FOOTY / WORLDWIDE</span><h3>Un mundo de competiciones.</h3><p>Escoge una liga para ver partidos, clasificación, goleadores y resúmenes disponibles.</p><button class="outline-btn" data-explore>Buscar liga ↗</button></div>${regions.map(r=>{const list=LEAGUES.filter(l=>l.region===r&&!l.editionOf);return !list.length?'':`<section class="explore-section"><div class="explore-section-head"><h3>${safe(r)}</h3><span>${list.length} competiciones</span></div><div class="explore-grid">${list.map(l=>`<button class="explore-card ${l.id===state.league?'selected':''}" data-league="${safe(l.id)}">${leagueBadge(l,'explore-logo')}<strong>${safe(l.name)}</strong><small>${safe(l.country)}</small>${l.id==='uefa.euro'?'<small class="edition-identity">Logo de EURO 2028</small>':l.id==='afc.asian.cup'?'<small class="edition-identity">Edición Arabia Saudí 2027</small>':''}<span class="explore-arrow">VER COMPETICIÓN ↗</span></button>`).join('')}</div></section>`}).join('')}`;}
