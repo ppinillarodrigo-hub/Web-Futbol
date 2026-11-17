@@ -5,6 +5,7 @@
   const logos=Object.freeze({
     'rsa.1':'./assets/betway-premiership.svg',
 
+    'eng.1':'./assets/premier-league-lion-2026.png',
     'bra.2':'https://commons.wikimedia.org/wiki/Special:FilePath/Campeonato_Brasileiro_Série_B_logo_(2025).svg',
     'concacaf.champions':'https://commons.wikimedia.org/wiki/Special:FilePath/CONCACAF_Champions_Cup_logo.svg',
     'uefa.euro.2024':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Euro_2024_logo.svg',
