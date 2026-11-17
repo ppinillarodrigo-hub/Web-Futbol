@@ -44,9 +44,8 @@ function leagueBadge(l,cls='competition-logo'){
    :national!=null
     ?`<span class="national-logo-sprite competition-sprite" aria-hidden="true" style="background-position:${national}% center"></span>`
     :'';
- /* The user's updated logos in the fresh montage take precedence over older files.
-    Otherwise use a full image/SVG and retain the original badge as a graceful fallback. */
- const useImage=!!src && (fresh==null || src.startsWith('./assets/crisp/'));
+ /* Prefer high-resolution per-competition local assets over legacy montage thumbnails. On error, preserve the sprite or country badge fallback. */
+ const useImage=!!src && (fresh==null || src.startsWith('./assets/'));
  const graphic=useImage
    ?sprite+`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('logo-loaded');this.parentElement.querySelector('.competition-sprite')?.remove()" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`
    :sprite|| (src?`<img data-league-logo="${safe(l.id)}" src="${safe(src)}" alt="" loading="lazy" decoding="async" onload="this.parentElement.classList.add('logo-loaded')" onerror="this.hidden=true;this.parentElement.classList.remove('logo-loaded')">`:'');

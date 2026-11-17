@@ -43,7 +43,7 @@
     'nor.1':'./assets/crisp/nor-1.webp',
     'swe.1':'./assets/crisp/swe-1.webp',
     'irl.1':'./assets/crisp/irl-1.webp',
-    'caf.champions':'./assets/crisp/caf-champions.webp',
+    'caf.champions':'./assets/caf-champions-hq.webp',
     'afc.asian.cup':'./assets/crisp/afc-asian-cup.webp',
     'ita.2':'./assets/serie-b-bkt.webp',
     'fifa.world':'./assets/fifa-world-cup-trophy.webp',
