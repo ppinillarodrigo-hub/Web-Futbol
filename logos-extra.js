@@ -3,6 +3,16 @@
 (function(){
   const original=window.footyLogoFor;
   const logos=Object.freeze({
+    'ger.2':'./assets/crisp/ger-2.webp',
+    'sco.1':'./assets/crisp/sco-1.webp',
+    'bel.1':'./assets/crisp/bel-1.webp',
+    'gre.1':'./assets/crisp/gre-1.webp',
+    'ser.1':'./assets/crisp/ser-1.webp',
+    'nor.1':'./assets/crisp/nor-1.webp',
+    'swe.1':'./assets/crisp/swe-1.webp',
+    'irl.1':'./assets/crisp/irl-1.webp',
+    'caf.champions':'./assets/crisp/caf-champions.webp',
+    'afc.asian.cup':'./assets/crisp/afc-asian-cup.webp',
     'ita.2':'./assets/serie-b-bkt.webp',
     'fifa.world':'./assets/fifa-world-cup-trophy.webp',
     'conmebol.america.2024':'./assets/copa-america-2024.webp',
