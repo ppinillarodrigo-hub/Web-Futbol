@@ -1,4 +1,51 @@
 {
-  "version": 1,
-  "clips": []
+  "version": 2,
+  "clips": [
+    {
+      "id": "wc26-final-fifa",
+      "title": "España 1–0 Argentina | Final del Mundial 2026 · Resumen oficial",
+      "provider": "FIFA",
+      "date": "2026-07-19",
+      "competition": "Mundial FIFA 2026",
+      "url": "https://www.youtube.com/watch?v=6HaHNYjnghE",
+      "thumbnail": "https://img.youtube.com/vi/6HaHNYjnghE/hqdefault.jpg"
+    },
+    {
+      "id": "wc26-qf-spain-belgium",
+      "title": "España 2–1 Bélgica | Cuartos del Mundial 2026",
+      "provider": "SBS Sport",
+      "date": "2026-07-10",
+      "competition": "Mundial FIFA 2026",
+      "url": "https://www.youtube.com/watch?v=6_wPhXTqxDY",
+      "thumbnail": "https://img.youtube.com/vi/6_wPhXTqxDY/hqdefault.jpg"
+    },
+    {
+      "id": "wc26-qf-norway-england",
+      "title": "Noruega 1–2 Inglaterra | Cuartos del Mundial 2026",
+      "provider": "SBS Sport",
+      "date": "2026-07-11",
+      "competition": "Mundial FIFA 2026",
+      "url": "https://www.youtube.com/watch?v=b9oearsMrB4",
+      "thumbnail": "https://img.youtube.com/vi/b9oearsMrB4/hqdefault.jpg"
+    },
+    {
+      "id": "wc26-qf-france-morocco",
+      "title": "Francia 2–0 Marruecos | Cuartos del Mundial 2026",
+      "provider": "SBS Sport",
+      "date": "2026-07-09",
+      "competition": "Mundial FIFA 2026",
+      "url": "https://www.youtube.com/watch?v=YTFuTuI59Sw",
+      "thumbnail": "https://img.youtube.com/vi/YTFuTuI59Sw/hqdefault.jpg"
+    },
+    {
+      "id": "wc26-sf-england-argentina",
+      "title": "Inglaterra - Argentina | Programa de resúmenes, semifinal",
+      "provider": "SBS Sport",
+      "date": "2026-07-15",
+      "competition": "Mundial FIFA 2026",
+      "url": "https://www.youtube.com/watch?v=mBT5FDWOoyI",
+      "thumbnail": "https://img.youtube.com/vi/mBT5FDWOoyI/hqdefault.jpg"
+    }
+  ],
+  "sourceNote": "Resúmenes alojados por FIFA y emisoras oficiales, incrustados mediante el reproductor permitido por YouTube. Algunos pueden estar restringidos geográficamente."
 }
