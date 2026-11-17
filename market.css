@@ -1,0 +1,70 @@
+/* FOOTY NOVA: Mercado de fichajes & news radar. 2026-11-17 */
+.market-page{min-width:0;display:grid;gap:19px;color:var(--ink,#edf7ff)}
+.market-intro{min-height:205px;border:0;border-radius:24px;overflow:hidden;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:30px clamp(22px,3vw,42px);background:radial-gradient(ellipse at 94% 50%,#2781c75c,transparent 38%),linear-gradient(115deg,#071b34,#163d62);position:relative}
+.market-kicker{font:750 10px/1.5 system-ui,sans-serif;letter-spacing:2px;color:#60d7ff}
+.market-intro h2{margin:12px 0 8px;font:850 clamp(25px,3.2vw,40px)/1.08 system-ui,sans-serif;letter-spacing:-1.4px;color:#f6fcff!important}
+.market-intro h2 em{font-style:normal;color:#71d5ff}
+.market-intro p{max-width:640px;margin:0;color:#b2cde5;font:500 13px/1.7 system-ui,sans-serif}
+.market-intro-art{flex:none;display:grid;place-items:center;width:156px;height:156px;border-radius:32px;background:radial-gradient(circle at 25% 20%,#4ca5f1,#13559f 55%,#0e2a59);box-shadow:0 15px 38px #01102891,inset 0 2px 12px #b3d9ff47;color:#fff;font:800 96px/1 system-ui;transform:rotate(-5deg)}
+.market-intro-art span{font:800 8px/1 system-ui;letter-spacing:2px;position:absolute;bottom:15px;color:#dcf7ff}
+.market-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.market-filters{display:flex;flex-wrap:wrap;gap:7px;padding:6px;border-radius:19px;background:var(--nova-surface,#142941)}
+.market-filters button,.market-refresh{cursor:pointer;border:0;border-radius:13px;padding:11px 15px;font:750 12px system-ui;color:var(--muted,#bbd1e4);background:transparent}
+.market-filters button.selected{background:linear-gradient(130deg,#2573d6,#4599f4);color:#fff;box-shadow:0 3px 12px #0d4da655}
+.market-refresh{background:var(--nova-elevated,#1d3752);color:var(--ink,#eaf7ff)}
+.market-refresh:disabled{opacity:.55;cursor:wait}
+.market-search-row{display:flex;gap:12px;flex-wrap:wrap}
+.market-search{display:flex;align-items:center;gap:10px;background:var(--nova-surface,#142941);padding:0 17px;border-radius:15px;flex:1 1 320px;color:var(--muted,#acc6e4);min-height:48px}
+.market-search span{font-size:21px}
+.market-search input{border:0;outline:none;color:var(--ink,#eaf6ff);background:transparent;min-width:0;width:100%;font:600 13px system-ui}
+.market-search input::placeholder{color:var(--muted,#88a4be)}
+#market-league{border:0;outline:0;min-height:48px;padding:0 14px;border-radius:15px;background:var(--nova-surface,#142941);color:var(--ink,#eaf6ff);font:700 12px system-ui}
+.market-section-top{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-top:8px}
+.market-section-top h3{font:800 23px/1.3 system-ui;letter-spacing:-.5px;margin:5px 0 0;color:var(--ink,#edf7ff)!important}
+.market-stat{display:grid;text-align:right;gap:5px;font:750 12px system-ui;color:var(--ink,#edf7ff)}
+.market-stat small{font:500 11px system-ui;color:var(--muted,#93a6bf)}
+.market-status{font:500 11px/1.55 system-ui;color:var(--muted,#b0c5df);margin-top:-7px}
+.market-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.market-story{background:var(--nova-surface,#142941);border:0;border-radius:20px;overflow:hidden;box-shadow:0 12px 28px #010c1c18;min-width:0;display:flex;flex-direction:column}
+.market-story-cover{height:160px;overflow:hidden;background:radial-gradient(circle at 60% 30%,#306da2,#0c2848 70%);position:relative;display:grid;place-items:center}
+.market-story-cover img{display:block;width:100%;height:100%;object-fit:cover}
+.market-source-mark{position:absolute;bottom:12px;left:12px;font:850 9px system-ui;letter-spacing:2px;color:#fff;background:#09395fb0;padding:7px 8px;border-radius:7px}
+.market-story-body{padding:19px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;flex:1}
+.market-story-meta{display:flex;flex-wrap:wrap;justify-content:space-between;width:100%;gap:6px;color:var(--muted,#a0b9d3);font:650 10px system-ui}
+.market-tag{font:800 10px system-ui;color:#79dcff;background:#174c72;padding:6px 9px;border-radius:8px}
+.market-tag.rumor{color:#ffe8b1;background:#6a4b2599}
+.market-story h3{font:800 16px/1.38 system-ui;letter-spacing:-.3px;color:var(--ink,#f0f8ff)!important;margin:0}
+.market-story p{font:500 12px/1.55 system-ui;color:var(--muted,#afc3d7);margin:0 0 4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.market-story-link{font:800 12px system-ui;color:#71cfff;text-decoration:none;margin-top:auto;padding:8px 0}
+.market-story-link:hover{text-decoration:underline}
+.market-empty{grid-column:1/-1;min-height:216px;display:grid;place-content:center;justify-items:center;gap:8px;padding:24px;text-align:center;border-radius:20px;background:var(--nova-surface,#15283e);color:var(--ink,#edf7ff)}
+.market-empty span{font:750 34px system-ui;color:#67c9f9}
+.market-empty strong{font:800 16px system-ui}
+.market-empty p{font:500 12px/1.5 system-ui;color:var(--muted,#a8bfd4);margin:0}
+.market-empty button{border:0;border-radius:12px;background:#2875c6;color:#fff;padding:10px 15px;font:750 12px system-ui;cursor:pointer;margin-top:4px}
+.market-official{margin-top:11px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--nova-surface,#142941);border-radius:20px;padding:25px}
+.market-official h3{font:800 21px system-ui;color:var(--ink,#edf7ff)!important;margin:6px 0}
+.market-official p{font:500 12px/1.6 system-ui;max-width:540px;color:var(--muted,#aac4da)}
+.market-official-links{display:flex;flex-wrap:wrap;gap:8px;max-width:470px}
+.market-official-links a{text-decoration:none;color:#dcefff;font:750 11px system-ui;background:#215b88;padding:10px 12px;border-radius:12px}
+.market-official-links a:hover{background:#2578ba}
+html[data-theme="light"] .market-page{color:#17304b}
+html[data-theme="light"] .market-filters,html[data-theme="light"] .market-story,html[data-theme="light"] .market-official,
+html[data-theme="light"] .market-search,html[data-theme="light"] #market-league,
+html[data-theme="light"] .market-empty{background:#fff;color:#17304b}
+html[data-theme="light"] .market-refresh{background:#dce8f5;color:#16456d}
+html[data-theme="light"] .market-filters button{color:#315373}
+html[data-theme="light"] .market-filters button.selected{color:white;background:#246dc0}
+html[data-theme="light"] .market-search input{color:#123a63}
+html[data-theme="light"] .market-search input::placeholder{color:#647e97}
+html[data-theme="light"] .market-section-top h3,html[data-theme="light"] .market-story h3,html[data-theme="light"] .market-official h3,html[data-theme="light"] .market-empty strong{color:#132e4b!important}
+html[data-theme="light"] .market-story-meta,html[data-theme="light"] .market-story p,
+html[data-theme="light"] .market-official p,html[data-theme="light"] .market-status,html[data-theme="light"] .market-stat small,
+html[data-theme="light"] .market-empty p{color:#4d6680}
+html[data-theme="light"] .market-stat{color:#21425e}
+html[data-theme="light"] .market-tag{background:#dcedfb;color:#165d90}
+html[data-theme="light"] .market-tag.rumor{background:#fff0cb;color:#8c5e13}
+html[data-theme="light"] .market-story-link{color:#145fa7}
+@media(max-width:1100px){.market-results{grid-template-columns:repeat(2,minmax(0,1fr))}.market-intro-art{width:120px;height:120px;font-size:72px}}
+@media(max-width:700px){.market-results{grid-template-columns:1fr}.market-intro{padding:23px}.market-intro-art{display:none}.market-toolbar{align-items:stretch}.market-filters{width:100%;overflow-x:auto;flex-wrap:nowrap}.market-filters button{white-space:nowrap;flex-shrink:0}.market-refresh{width:100%}.market-story-cover{height:180px}.market-section-top h3{font-size:20px}.market-official{padding:19px}.market-official-links{max-width:none}}
+@media(prefers-reduced-motion:no-preference){.market-story{transition:transform .2s ease}.market-story:hover{transform:translateY(-3px)}}
