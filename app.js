@@ -65,7 +65,25 @@ const themes={
 'afc.champions':['#7a9bf8','#ded9ff','#303b68'],'usa.1':['#f34a59','#8ec1ff','#443147'],
 'bra.1':['#54c57c','#f5e77d','#294837'],'fifa.world':['#dfb266','#ffdda7','#463c2f']};
 const fall={'Europa':['#609ef6','#a3caff','#213a54'],'Copas':['#efa55a','#ffdf9e','#49372c'],'Internacionales':['#7f92fa','#d5d2ff','#363856'],'Selecciones':['#c6b36b','#f4e3b1','#453e33'],'América':['#56cda5','#b3eee0','#274a41'],'Asia y Oceanía':['#75a5f9','#acd4ff','#2f3d5b'],'África':['#d7ac53','#ffe293','#433c2d'],'Fútbol femenino':['#e98bbc','#ffd5f1','#4c3151']};
-const v=themes[state.league]||fall[nl().region]||fall.Europa;
+const countries={
+'España':['#e74c47','#ffd166','#412d38'],'Inglaterra':['#d94154','#ffffff','#452737'],
+'Italia':['#37a86d','#dcebf8','#244b43'],'Alemania':['#f4b84c','#ffeb9c','#4a3b2d'],
+'Francia':['#486ed9','#dce9ff','#27385f'],'Países Bajos':['#ed844a','#e4efff','#4a382c'],
+'Portugal':['#39ba78','#f5d366','#284938'],'Bélgica':['#d4a943','#f8e1a2','#4d3c2d'],
+'Escocia':['#6394e7','#d4e8ff','#293e60'],'Austria':['#df4c54','#f8b3b3','#482a33'],
+'Turquía':['#e34c56','#ffc6c6','#4a2d35'],'Grecia':['#59a9e9','#d5ebff','#2a4563'],
+'Dinamarca':['#d84e55','#ffc5c9','#492e38'],'Noruega':['#e44f61','#afc6f7','#3c334f'],
+'Suecia':['#ebc651','#8bbfff','#443b32'],'Irlanda':['#35b97b','#d6ffe8','#28483c'],
+'Estados Unidos':['#dc5466','#7fa9f5','#373b55'],'México':['#32b570','#ee979a','#29473b'],
+'Argentina':['#72bbf3','#f7f9ff','#324c64'],'Brasil':['#53c56e','#f9e16b','#314c31'],
+'Colombia':['#f4d353','#5b8ee3','#494234'],'Chile':['#e75056','#6ab0ff','#403747'],
+'Uruguay':['#81bdf3','#e5f4ff','#31485e'],'Perú':['#e34b5d','#f2d2d3','#472d34'],
+'Ecuador':['#eac548','#e86a53','#4c3d33'],'Arabia Saudí':['#3dbd78','#c5ffcd','#2a4b3d'],
+'Japón':['#e85666','#c2d8f6','#4d3747'],'China':['#f34e51','#ffcd7e','#4e2e2d'],
+'India':['#ed9251','#8bd9a0','#493e31'],'Tailandia':['#e85a5f','#a9b9e8','#3e354e'],
+'Australia':['#f1c653','#7ab0e7','#463b33'],'Sudáfrica':['#5cbc77','#f7d669','#2c453b']
+};
+const v=themes[state.league]||countries[nl().country]||fall[nl().region]||fall.Europa;
 for(const [i,k] of ['--league-a','--league-b','--league-dark'].entries())document.documentElement.style.setProperty(k,v[i]);
 document.querySelectorAll('.pulse-nav [data-view]').forEach(b=>{const on=b.dataset.view===state.view;b.classList.toggle('active',on);b.setAttribute('aria-current',on?'page':'false')});
 }
