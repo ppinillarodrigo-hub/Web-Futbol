@@ -27,6 +27,17 @@ const external={
 };
 const marks={};for(const [id,n] of Object.entries(ids))marks[id]={dark:dir+'500-dark/'+n+'.png',light:dir+'500/'+n+'.png'};
 for(const [id,url] of Object.entries(external))marks[id]={dark:url,light:url};
+
+const nationalMarks={
+ 'caf.nations':0,'caf.nations_qual':0,'fifa.worldq.caf':0,
+ 'uefa.nations':1,
+ 'concacaf.nations.league':2,
+ 'concacaf.gold':3,
+ 'fifa.worldq.concacaf':4,
+ 'fifa.worldq.uefa':5,
+ 'fifa.worldq.conmebol':6
+};
+window.footyNationalSpriteFor=id=>Object.prototype.hasOwnProperty.call(nationalMarks,id)?(nationalMarks[id]*100/6):null;
 window.footyLogoFor=id=>{const item=marks[id];return item?(document.documentElement.dataset.theme==='light'?item.light:item.dark):''};
 window.footyUpdateLogos=()=>document.querySelectorAll('img[data-league-logo]').forEach(im=>{const url=window.footyLogoFor(im.dataset.leagueLogo);if(url&&im.getAttribute('src')!==url){im.parentElement.classList.remove('logo-loaded');im.src=url;}else if(!url){im.hidden=true;im.parentElement.classList.remove('logo-loaded')}});
 window.footyHydrateLogos=async()=>{try{let r=await fetch('https://api-football-standings.azharimm.site/leagues');if(!r.ok)return;let o=await r.json();for(const x of o.data||[]){if(!marks[x.id]&&x.logos?.light&&/^https:\/\//.test(x.logos.light))marks[x.id]={light:x.logos.light,dark:x.logos.dark||x.logos.light};}window.footyUpdateLogos();}catch(e){}};
