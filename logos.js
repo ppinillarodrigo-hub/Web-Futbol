@@ -2,6 +2,11 @@
 const dir='https://a.espncdn.com/i/leaguelogos/soccer/';
 const ids={'esp.1':15,'eng.1':23,'ita.1':12,'ger.1':10,'fra.1':9,'ned.1':11,'por.1':14,'tur.1':18,'arg.1':1,'bra.1':85,'mex.1':22,'jpn.1':2199,'chn.1':2350,'tha.1':2341,'aus.1':1308};
 const external={
+ 'usa.1':'./assets/mls.webp',
+ 'ita.coppa_italia':'./assets/coppa-italia.webp',
+ 'ger.dfb_pokal':'./assets/dfb-pokal.webp',
+ 'afc.u23':'./assets/afc-u23-asian-cup.webp',
+ 'fifa.worldq.afc':'./assets/afc-asian-qualifiers.webp',
  'esp.2':'./assets/laliga-hypermotion.png',
  'uefa.champions':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Champions_League_logo_no_text.svg',
  'uefa.europa':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Europa_League_logo_(2024_version).svg',

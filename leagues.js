@@ -47,6 +47,8 @@ const FOOTY_RAW=[
 ['conmebol.libertadores.femenina','Libertadores Femenina','CONMEBOL','🏆','Fútbol femenino','https://gol.conmebol.com/libertadores/es'],
 ['concacaf.champions','Champions Cup CONCACAF','CONCACAF','🏆','Internacionales','https://www.concacaf.com/champions-cup/'],
 ['fifa.world','Mundial FIFA','FIFA','🌎','Selecciones','https://www.fifa.com/en/tournaments/mens/worldcup'],
+['fifa.worldq.afc','Eliminatorias Mundial AFC','AFC','🌏','Selecciones','https://www.the-afc.com/en/national/asian_qualifiers.html'],
+['afc.u23','Copa Asiática Sub-23','AFC','🏆','Selecciones','https://www.the-afc.com/en/national/afc_u23_asian_cup.html',true],
 ['fifa.worldq.uefa','Clasificación Mundial UEFA','FIFA','🌎','Selecciones','https://www.fifa.com/'],
 ['fifa.worldq.conmebol','Eliminatorias CONMEBOL','FIFA','🌎','Selecciones','https://www.fifa.com/'],
 ['uefa.euro','Eurocopa UEFA','UEFA','🏆','Selecciones','https://www.uefa.com/uefaeuro/'],
@@ -76,4 +78,4 @@ const FOOTY_RAW=[
 ['fifa.wwc','Mundial Femenino FIFA','FIFA','🌎','Fútbol femenino','https://www.fifa.com/en/tournaments/womens/womensworldcup']
 ];
 
-window.FOOTY_LEAGUES=FOOTY_RAW.map(([id,name,country,flag,region,official])=>({id,name,country,flag,region,official}));
+window.FOOTY_LEAGUES=FOOTY_RAW.map(([id,name,country,flag,region,official,catalogOnly=false])=>({id,name,country,flag,region,official,catalogOnly}));
