@@ -73,7 +73,7 @@ const FOOTY_RAW=[
 ['tha.1','Thai League 1','Tailandia','🇹🇭','Asia y Oceanía','https://www.thaileague.co.th/'],
 ['aus.1','A-League Men','Australia','🇦🇺','Asia y Oceanía','https://aleagues.com.au/'],
 ['afc.champions','AFC Champions League Elite','AFC','🏆','Internacionales','https://www.the-afc.com/'],
-['rsa.1','South African Premiership','Sudáfrica','🇿🇦','África','https://www.psl.co.za/'],
+['rsa.1','Betway Premiership','Sudáfrica','🇿🇦','África','https://www.psl.co.za/tournament/betway-premiership'],
 ['caf.champions','CAF Champions League','CAF','🏆','Internacionales','https://www.cafonline.com/'],
 ['caf.nations','Copa Africana de Naciones','CAF','🏆','Selecciones','https://www.cafonline.com/'],
 ['esp.w.1','Liga F','España','🇪🇸','Fútbol femenino','https://ligaf.es/'],
