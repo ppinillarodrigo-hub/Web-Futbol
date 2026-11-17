@@ -2,6 +2,7 @@
 const dir='https://a.espncdn.com/i/leaguelogos/soccer/';
 const ids={'esp.1':15,'eng.1':23,'ita.1':12,'ger.1':10,'fra.1':9,'ned.1':11,'por.1':14,'tur.1':18,'arg.1':1,'bra.1':85,'mex.1':22,'jpn.1':2199,'chn.1':2350,'tha.1':2341,'aus.1':1308};
 const external={
+ 'esp.2':'./assets/laliga-hypermotion.png',
  'uefa.champions':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Champions_League_logo_no_text.svg',
  'uefa.europa':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Europa_League_logo_(2024_version).svg',
  'uefa.europa.conf':'https://commons.wikimedia.org/wiki/Special:FilePath/UEFA_Conference_League_full_logo_(2024_version).svg',
@@ -9,9 +10,9 @@ const external={
  'conmebol.libertadores':'https://commons.wikimedia.org/wiki/Special:FilePath/Copa_Libertadores_logo.svg',
  'conmebol.sudamericana':'https://commons.wikimedia.org/wiki/Special:FilePath/Copa_Sudamericana_logo.svg',
  'conmebol.recopa':'https://commons.wikimedia.org/wiki/Special:FilePath/Recopa_Sudamericana_logo.svg',
- 'eng.2':'https://commons.wikimedia.org/wiki/Special:FilePath/EFL_Championship_logo.svg',
- 'eng.3':'https://commons.wikimedia.org/wiki/Special:FilePath/EFL_League_One_logo.svg',
- 'eng.4':'https://commons.wikimedia.org/wiki/Special:FilePath/EFL_League_Two_logo.svg',
+ 'eng.2':'./assets/efl-championship.png',
+ 'eng.3':'./assets/efl-league-one.png',
+ 'eng.4':'./assets/efl-league-two.png',
  'ita.2':'https://commons.wikimedia.org/wiki/Special:FilePath/Serie_B_logo.svg',
  'ger.2':'https://commons.wikimedia.org/wiki/Special:FilePath/2._Bundesliga_logo.svg',
  'fra.2':'https://commons.wikimedia.org/wiki/Special:FilePath/Ligue_2_logo.svg',
