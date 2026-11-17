@@ -48,8 +48,22 @@ function stage(s){
  if(/\bfinal\b|the final|gran final/.test(x))return 'final';
  return null;
 }
-function extractStage(e){
+function worldCup2026Round(e){
+ const value=e?.date||e?.competitions?.[0]?.date;
+ if(!value)return null;
+ const d=new Date(value);if(!Number.isFinite(d.getTime()))return null;
+ const day=d.toISOString().slice(0,10);
+ // FIFA 2026: official tournament calendar, not a guessed matchup.
+ if(day>='2026-06-28'&&day<='2026-07-03')return 'r32';
+ if(day>='2026-07-04'&&day<='2026-07-07')return 'r16';
+ if(day>='2026-07-09'&&day<='2026-07-11')return 'qf';
+ if(day>='2026-07-14'&&day<='2026-07-15')return 'sf';
+ if(day==='2026-07-19')return 'final';
+ return null; // July 18 was the third-place match, not the final.
+}
+function extractStage(e,id=''){
  const c=e?.competitions?.[0]||{},week=e?.week||{};
+ if(id==='fifa.world'){const inferred=worldCup2026Round(e);if(inferred)return inferred;}
  const possibilities=[
  c.round?.displayName,c.round?.name,e.round?.displayName,e.round?.name,
  week.text,week.displayName,week.name,
@@ -60,24 +74,24 @@ function extractStage(e){
  for(const s of possibilities){if(!s)continue;const a=stage(s);if(a)return a}
  return null;
 }
-function parseEvent(e){
+function parseEvent(e,id=''){
  const c=e?.competitions?.[0]||{},t=c.competitors||[];
  if(t.length<2||!e.id)return null;
  const h=t.find(x=>x.homeAway==='home')||t[0],a=t.find(x=>x.homeAway==='away')||t[1];
  const typ=e.status?.type||c.status?.type||{};
  const date=Date.parse(e.date||c.date||'');
- const score=x=>x?.score===0?0:Number.isFinite(Number(x?.score))?Number(x.score):null;
+ const score=x=>x?.score==null||x.score===''?null:Number.isFinite(Number(x.score))?Number(x.score):null;
  const name=x=>x?.team?.displayName||x?.team?.name||'Por confirmar';
- return {id:String(e.id),round:extractStage(e),date:Number.isFinite(date)?date:null,
+ return {id:String(e.id),round:extractStage(e,id),date:Number.isFinite(date)?date:null,
   home:name(h),away:name(a),homeId:String(h.team?.id||name(h)),awayId:String(a.team?.id||name(a)),
   hscore:score(h),ascore:score(a),played:!!(typ.completed||typ.state==='post'),status:typ.shortDetail||typ.detail||'',
   venue:c.venue?.fullName||'',eventName:e.name||''};
 }
-function fixtures(events){
+function fixtures(events,id=''){
  const seen=new Set(),buckets={};for(const v of order)buckets[v]=[];
  const unidentified=[];
  for(const event of events){
-  const m=parseEvent(event);if(!m||seen.has(m.id))continue;seen.add(m.id);
+  const m=parseEvent(event,id);if(!m||seen.has(m.id))continue;seen.add(m.id);
   if(m.round)buckets[m.round].push(m);else unidentified.push(m);
  }
  const rounds=order.map(key=>{
@@ -101,7 +115,7 @@ async function load(id,getJSON,force=false,selectedYear=null){
   for(const z of settled)if(z.status==='fulfilled'&&Array.isArray(z.value?.events)){success++;fetched.push(...z.value.events)}
  }
  if(!success)throw new Error('ESPN no ha proporcionado el calendario de esta competición');
- const rounds=fixtures(fetched);
+ const rounds=fixtures(fetched,id);
  return {...rounds,year:y,periods:periods.length,success,events:fetched.length};
 }
 function fixtureCard(tie){
@@ -123,7 +137,7 @@ function fixtureCard(tie){
 }
 function render(id,data,official,loading,error){
  const link=String(official||'').startsWith('https://')?official:'';
- const officialLink= id==='uefa.champions'?'https://www.uefa.com/uefachampionsleague/fixtures-results/bracket/':
+ const officialLink=id==='fifa.world'?'https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/knockout-stage-match-schedule-bracket':id==='uefa.champions'?'https://www.uefa.com/uefachampionsleague/fixtures-results/bracket/':
  id==='uefa.europa'?'https://www.uefa.com/uefaeuropaleague/fixtures-results/bracket/':
  id==='uefa.europa.conf'?'https://www.uefa.com/uefaconferenceleague/fixtures-results/bracket/':link;
  const head='<section class="ko-heading"><div><span class="ko-kicker">FASE FINAL / CAMINO AL TÍTULO</span><h3>El camino a la final</h3><p>Cuadro por rondas con partidos publicados por ESPN. Los cruces futuros no se inventan y el orden visual no sustituye al sorteo oficial.</p></div>'+
