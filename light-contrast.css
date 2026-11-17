@@ -173,3 +173,77 @@ html[data-theme="light"] input:focus-visible {outline:3px solid #1758ae!importan
  html[data-theme="light"] .sidebar {background:#e2edf9!important;box-shadow:12px 0 25px #142f522a!important}
  html[data-theme="light"] .mobile-shade:not([hidden]) {background:#0d2b4f91!important}
 }
+
+/* Footy visual reliability / 2026-11-17: readable empty states and true-size crests */
+html[data-theme="light"] .pulse-no-matches,
+html[data-theme="light"] .pulse-no-matches span,
+html[data-theme="light"] .pulse-no-matches p {
+  color:#365a7a!important; opacity:1!important; font-size:13px!important;
+  line-height:1.55!important; text-shadow:none!important;
+}
+html[data-theme="light"] .pulse-no-matches b,
+html[data-theme="light"] .pulse-no-matches strong {
+  color:#173552!important; opacity:1!important; font-size:15px!important;
+  font-weight:780!important; text-shadow:none!important;
+}
+html[data-theme="light"] .pulse-no-matches { min-height:128px; padding:22px 18px; }
+html[data-theme="light"] .pulse-kickoff,
+html[data-theme="light"] .pulse-date-nav,
+html[data-theme="light"] .pulse-match-tile-top,
+html[data-theme="light"] .pulse-match-tile-foot,
+html[data-theme="light"] .pulse-center-score small,
+html[data-theme="light"] .pulse-card p,
+html[data-theme="light"] .panel .empty p {
+  color:#385b7b!important;opacity:1!important;text-shadow:none!important;
+}
+html[data-theme="light"] .pulse-league-id,
+html[data-theme="light"] .pulse-league-id span,
+html[data-theme="light"] .pulse-feature .pulse-league-id{
+ color:#21496e!important;text-shadow:none!important;
+}
+html[data-theme="light"] .pulse-card-title h3,
+html[data-theme="light"] .pulse-card-title h3 *,
+html[data-theme="light"] .pulse-feature strong,
+html[data-theme="light"] .pulse-feature .pulse-club strong,
+html[data-theme="light"] .empty strong {
+ color:#163655!important;opacity:1!important;text-shadow:none!important;
+}
+html[data-theme="light"] .pulse-card-title button,
+html[data-theme="light"] .pulse-date-nav button,
+html[data-theme="light"] .pulse-status:not(.live),
+html[data-theme="light"] .pulse-tag,
+html[data-theme="light"] .pulse-primary,
+html[data-theme="light"] .pulse-secondary{
+  background:#e0ebf8!important;color:#164a78!important;box-shadow:none!important;
+}
+html[data-theme="light"] .pulse-primary{background:#246fc5!important;color:#fff!important}
+html[data-theme="light"] .pulse-status.live{background:#c91e35!important;color:#fff!important}
+html[data-theme="light"] .pulse-card .pulse-match-grid,
+html[data-theme="light"] .pulse-card .panel-body {color:#203f60!important}
+html[data-theme="light"] .empty-icon{color:#1d64aa!important;opacity:1!important}
+html[data-theme="light"] .rail-heading,
+html[data-theme="light"] .rail-heading small,
+html[data-theme="light"] .metric-heading,
+html[data-theme="light"] .metric-heading span{color:#264f73!important}
+html[data-theme="light"] .scorer-row .scorer-info small,
+html[data-theme="light"] .standings .team-name,
+html[data-theme="light"] .table-note{color:#385879!important}
+html[data-theme="light"] #dashboard .panel,
+html[data-theme="light"] #dashboard .pulse-card{color:#1a3551!important}
+/* Keep logos sharp: never use forced pixelated interpolation, minimize padding. */
+.logo-holder img[data-league-logo]{
+  image-rendering:auto!important;
+  object-fit:contain!important;
+  padding:3px!important;
+  filter:none!important;
+  max-width:100%;max-height:100%;
+  transform:translateZ(0);
+}
+.logo-holder.rail-logo img[data-league-logo],
+.logo-holder.explore-logo img[data-league-logo]{padding:3px!important}
+.logo-holder:has(img[data-league-logo]) {background:#f4f8fd!important}
+.logo-holder .national-logo-sprite,
+.logo-holder .cup-logo-sprite,
+.logo-holder .fresh-logo-sprite {image-rendering:auto!important;filter:none!important}
+/* No artificial white borders or frames. */
+.logo-holder {border:0!important;box-shadow:none!important}
