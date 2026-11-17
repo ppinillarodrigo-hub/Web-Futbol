@@ -12,8 +12,10 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="preconnect" href="https://site.api.espn.com">
 <link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="./pulse.css">
 <script defer src="./leagues.js"></script>
 <script defer src="./logos.js"></script>
+<script defer src="./logo-upgrades.js"></script>
 <script defer src="./app.js"></script>
 </head>
 <body>
@@ -51,7 +53,7 @@
         <button class="icon-button mobile-menu" id="menu-open" aria-label="Abrir menú">☰</button>
         <div class="breadcrumbs"><span>FOOTY</span><b>/</b><span id="crumb-title">Inicio</span></div>
       </div>
-      <div class="topbar-actions">
+      <nav class="pulse-nav" aria-label="Navegación deportiva"><button data-view="home" class="active">Inicio</button><button data-view="matches">Partidos</button><button data-view="standings">Clasificación</button><button data-view="scorers">Goleadores</button><button data-view="videos">Resúmenes</button><button data-view="explore">Ligas</button></nav><div class="topbar-actions">
         <button class="search-trigger" id="open-search"><span class="search-symbol">⌕</span><span class="search-placeholder">Buscar ligas y equipos...</span><kbd>Ctrl K</kbd></button>
         <div class="live-pill"><span class="live-dot"></span><span>FOOTY LIVE</span></div>
         <button id="theme-toggle" class="icon-button" title="Cambiar tema" aria-label="Cambiar tema">☾</button>
