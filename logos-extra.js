@@ -6,10 +6,11 @@
     'rsa.1':'./assets/betway-premiership.svg',
 
     'eng.1':'./assets/premier-league-lion-2026.png',
-    /* User-supplied modern emblems, individually optimized. */
+    /* User-supplied emblems, stored locally in lossless format. The CAF symbol is a confederation emblem used for its qualifiers, not the AFCON tournament crest. */
     'ned.1':'./assets/eredivisie-2026.svg',
     'aus.1':'./assets/a-league-men-2026.svg',
     'fifa.worldq.uefa':'./assets/european-qualifiers-2026.webp',
+    'fifa.worldq.concacaf':'./assets/concacaf-qualifiers-2026.webp',
     'fifa.worldq.caf':'./assets/caf-federation-hq.webp',
     'caf.nations_qual':'./assets/caf-federation-hq.webp',
     'fifa.worldq.conmebol':'./assets/conmebol-federation-hq.webp',
