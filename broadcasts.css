@@ -1,0 +1,43 @@
+/* FOOTY NOVA · Guía de TV (18/11/2026), sin contornos grises */
+.tv-league-guide,.tv-details{border:0;border-radius:20px;background:var(--card2,#132a44);padding:16px 19px;margin:12px 0;color:var(--ink,#eff8ff)}
+.tv-league-guide>div:first-child{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.tv-league-guide strong,.tv-title{font:800 14px/1.35 system-ui;letter-spacing:-.2px;color:var(--ink,#f8fcff)}
+.tv-league-guide>div:first-child>span{font:700 10px system-ui;color:var(--muted,#bed1e0)}
+.tv-league-guide p,.tv-disclaimer,.tv-unknown{font:550 12px/1.65 system-ui;color:var(--muted,#b7ccdd);margin:10px 0}
+.tv-league-guide a,.tv-schedule-link{font:800 11px/1.5 system-ui;color:var(--league-a,#76c6ff);text-decoration:none}
+.tv-league-guide a:hover,.tv-schedule-link:hover{text-decoration:underline}
+.tv-channel-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:13px}
+.tv-provider{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:12px;background:var(--card,#213953);color:var(--ink,#eaf7ff);font:800 11px/1.3 system-ui;white-space:normal}
+.tv-provider img{height:25px;min-width:22px;max-width:86px;width:auto;object-fit:contain;background:#fff;border-radius:7px;padding:3px;box-sizing:content-box}
+.tv-provider-small{padding:5px 7px;border-radius:9px;font:750 10px/1.2 system-ui}
+.tv-provider-small img{height:16px;max-width:44px;min-width:15px;padding:2px;border-radius:5px}
+.tv-compact{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;max-width:100%;line-height:1.3}
+.tv-compact .tv-provider-small{white-space:nowrap}
+.tv-mini-note{font:650 9px/1.4 system-ui;color:var(--muted,#acc7df);text-align:center;max-width:100%}
+.match-card{flex-wrap:wrap}
+.match-card .tv-compact{flex:1 0 100%;padding:5px 0 0;justify-content:center}
+.match-card .tv-mini-note{flex:1 0 100%}
+.pulse-tv-line{display:flex;align-items:center;justify-content:center;padding:4px 8px;min-height:23px}
+.pulse-tv-line .tv-compact{max-width:100%}
+.pulse-tv-line .tv-provider-small{font-size:9px}
+.pulse-feature .pulse-tv-line{margin:8px 10px 0}
+.tv-country{margin-left:7px;font:750 10px system-ui;color:#85d1fa}
+.tv-description{font:650 12px system-ui;color:var(--muted,#acc4d9);margin-top:8px}
+.tv-international{border-top:1px solid #ffffff20;margin-top:15px;padding-top:11px}
+.tv-international>small{display:block;color:var(--muted,#9cb7cf);font:500 11px/1.5 system-ui}
+.tv-detail-link{text-decoration:none;border-radius:10px}
+.tv-detail-link:hover .tv-provider{background:#295079}
+.tv-detail-link:focus-visible{outline:2px solid #63c5ff}
+.auto-data-status{font:750 11px/1.5 system-ui;color:var(--muted,#b9d1e5);display:flex;gap:7px;align-items:center;flex-wrap:wrap;padding:0 0 8px}
+.auto-data-status .live-dot{width:7px;height:7px;background:#29db9f;border-radius:50%;box-shadow:0 0 10px #29db9f77}
+.auto-data-status .stale-dot{background:#dba456;box-shadow:0 0 9px #dba45677}
+html[data-theme="light"] .tv-details,html[data-theme="light"] .tv-league-guide{background:#e4edf8;color:#193c5d}
+html[data-theme="light"] .tv-provider{background:#f6fbff;color:#23415a}
+html[data-theme="light"] .tv-disclaimer,html[data-theme="light"] .tv-league-guide p,html[data-theme="light"] .tv-unknown{color:#3c5975}
+html[data-theme="light"] .tv-title,html[data-theme="light"] .tv-league-guide strong{color:#153653}
+html[data-theme="light"] .tv-league-guide a,html[data-theme="light"] .tv-schedule-link{color:#165c98}
+html[data-theme="light"] .tv-mini-note,html[data-theme="light"] .tv-description{color:#456580}
+html[data-theme="light"] .auto-data-status{color:#305272}
+html[data-theme="light"] .tv-international{border-top-color:#23456526}
+@media(max-width:800px){.tv-provider-small span{font-size:9px}.match-card .tv-provider-small{gap:4px;padding:4px}}
+@media(max-width:550px){.tv-channel-row{gap:6px}.tv-provider{font-size:10px;padding:7px}.tv-provider img{height:21px;max-width:70px}.pulse-tv-line{flex-wrap:wrap}.tv-details{padding:15px}}
