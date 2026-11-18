@@ -41,3 +41,8 @@ html[data-theme="light"] .auto-data-status{color:#305272}
 html[data-theme="light"] .tv-international{border-top-color:#23456526}
 @media(max-width:800px){.tv-provider-small span{font-size:9px}.match-card .tv-provider-small{gap:4px;padding:4px}}
 @media(max-width:550px){.tv-channel-row{gap:6px}.tv-provider{font-size:10px;padding:7px}.tv-provider img{height:21px;max-width:70px}.pulse-tv-line{flex-wrap:wrap}.tv-details{padding:15px}}
+
+/* Logos de TV, fila propia sin desplazar escudos ni marcadores */
+.match-card .tv-compact{grid-column:1 / -1;grid-row:auto;min-width:0;justify-content:center;display:flex;flex-wrap:wrap}
+.match-card .tv-provider-small{min-width:0}
+@media(max-width:620px){.match-card .tv-compact{grid-column:1 / -1}.tv-provider-small img{max-width:32px}}

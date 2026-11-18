@@ -30,3 +30,12 @@ También admite enlaces HTTPS a MP4/WebM y URLs de reproductores incrustables de
 ## Diseño
 
 Paleta azul noche + azul océano + cian neón + verde en vivo; responsive para móvil y Chromebook; favicon sin esquinas blancas.
+
+## Datos en vivo y operadores de TV (18-11-2026)
+
+- Las jornadas y las clasificaciones se consultan al abrir la web. Con la pestaña visible se sondean partidos en directo cada ~30 segundos, encuentros restantes cada ~2 minutos y clasificaciones cada ~5 minutos; los tiempos dependen también de la respuesta de ESPN.
+- La fecha del calendario avanza al día siguiente si está activado el seguimiento de la jornada actual. Las fechas históricas seleccionadas manualmente se respetan.
+- La hora de la última actualización refleja la última **respuesta de datos válida**, no la hora de renderizar. Ante un error se conserva la última tabla o marcador obtenido y se comunica la pérdida de actualización.
+- GitHub Pages no ejecuta consultas mientras el navegador está cerrado. ESPN es una fuente pública no oficial y puede fallar o no ofrecer una liga determinada.
+- «Dónde verlo» muestra operadores con derechos en España (Movistar Plus+, DAZN) con logos y referencias verificadas. Un operador de liga no equivale a la confirmación del canal exacto de todos sus partidos; se enlaza la programación oficial.
+- Consultar emisión por encuentro en LaLiga: https://www.laliga.com/iframes/external-consumer-broadcast
